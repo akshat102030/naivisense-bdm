@@ -1,0 +1,89 @@
+table fact_alert
+	lineageTag: 03e4cf82-2b84-4304-8232-ad0a688f2d11
+
+	column alert_id
+		dataType: string
+		lineageTag: 4121e654-74ee-4cde-bbad-04b3a8b4060b
+		summarizeBy: none
+		sourceColumn: alert_id
+
+	column child_id
+		dataType: string
+		lineageTag: 0cc37b54-fbb1-46fa-86c8-937ba22e9241
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column created_date
+		dataType: dateTime
+		lineageTag: 862c8f42-a1c1-4c13-a029-e3879cca6354
+		summarizeBy: none
+		sourceColumn: created_date
+		formatString: yyyy-mm-dd
+
+	column month_start
+		dataType: dateTime
+		lineageTag: 9d814378-3831-411f-b76d-f5788da59d7f
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column alert_type
+		dataType: string
+		lineageTag: 56f107e7-c450-4d2d-a18f-8092e9dc7a73
+		summarizeBy: none
+		sourceColumn: alert_type
+
+	column category
+		dataType: string
+		lineageTag: 7407ac86-283c-490f-adbd-44d5588107e8
+		summarizeBy: none
+		sourceColumn: category
+
+	column severity
+		dataType: string
+		lineageTag: aac11255-fa3a-4db4-b9d4-4d52918ff74d
+		summarizeBy: none
+		sourceColumn: severity
+
+	column source
+		dataType: string
+		lineageTag: f713587d-9d2b-40fb-a445-4163753974a1
+		summarizeBy: none
+		sourceColumn: source
+
+	column status
+		dataType: string
+		lineageTag: 0aadfc1c-e679-42d9-8247-4b420743f52e
+		summarizeBy: none
+		sourceColumn: status
+
+	column is_open
+		dataType: int64
+		lineageTag: fb5b6c66-5da0-448c-b9bf-edae6e99d5fa
+		summarizeBy: sum
+		sourceColumn: is_open
+
+	column hours_to_acknowledge
+		dataType: double
+		lineageTag: f9c657d6-4e3a-417d-9747-a244b6e19040
+		summarizeBy: sum
+		sourceColumn: hours_to_acknowledge
+
+	column hours_to_resolve
+		dataType: double
+		lineageTag: b85be6b9-80fe-4205-958a-347041fbc341
+		summarizeBy: sum
+		sourceColumn: hours_to_resolve
+
+	partition fact_alert = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_alert.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"created_date","month_start","is_open","hours_to_acknowledge","hours_to_resolve"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"alert_id", type text},{"child_id", type text},{"created_date", type date},{"month_start", type date},{"alert_type", type text},{"category", type text},{"severity", type text},{"source", type text},{"status", type text},{"is_open", Int64.Type},{"hours_to_acknowledge", type number},{"hours_to_resolve", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

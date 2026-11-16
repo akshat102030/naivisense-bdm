@@ -1,0 +1,66 @@
+relationship adad2a31-225a-4d01-b3fc-6cfe3bf4fb8b
+	fromColumn: fact_session.child_id
+	toColumn: dim_child.child_id
+
+relationship 70e32a83-bf23-4745-9b8c-65f5af3dc495
+	fromColumn: fact_session.therapist_id
+	toColumn: dim_therapist.therapist_id
+
+relationship cbd6f275-a76b-471a-a51a-c1461ec89593
+	fromColumn: fact_session.date
+	toColumn: dim_date.date
+
+relationship 313e9c2c-558d-4b51-aa6a-28242307b996
+	fromColumn: fact_assessment.child_id
+	toColumn: dim_child.child_id
+
+relationship 486a9b16-7b3b-4837-bc1f-135af80c7563
+	fromColumn: fact_assessment.assessment_date
+	toColumn: dim_date.date
+
+relationship 3eb56301-1103-434d-a470-d163e31247d6
+	fromColumn: fact_assessment_domain.child_id
+	toColumn: dim_child.child_id
+
+relationship 6fa31eb2-7fd4-4028-8319-d81e7b2ce352
+	fromColumn: fact_alert.child_id
+	toColumn: dim_child.child_id
+
+relationship 0a24e7fe-6b59-4c22-8847-573f1b9c4d3f
+	fromColumn: fact_alert.created_date
+	toColumn: dim_date.date
+
+relationship a5753504-62d8-43f3-8917-31bffe2d24d0
+	fromColumn: fact_payment.child_id
+	toColumn: dim_child.child_id
+
+relationship aad66bf1-dff5-4213-bdac-a9a26d5062f5
+	fromColumn: fact_payment.billing_date
+	toColumn: dim_date.date
+
+relationship 8e6c4802-0409-49e5-9cc3-9413d9e61c5b
+	fromColumn: fact_goal.child_id
+	toColumn: dim_child.child_id
+
+relationship 595142b5-e36f-40e2-be6b-6edf69c43c31
+	fromColumn: fact_home_engagement_weekly.child_id
+	toColumn: dim_child.child_id
+
+relationship b341a67e-15c8-48f5-9720-ca1cf19c85a4
+	fromColumn: fact_home_engagement_weekly.week_start
+	toColumn: dim_week.week_start
+
+relationship ee72bd27-c9ee-40fb-86a8-3d5894d93534
+	fromColumn: fact_child_therapist.child_id
+	toColumn: dim_child.child_id
+
+relationship 27002c8d-b1a3-49eb-abb6-0d90939ef769
+	fromColumn: fact_child_therapist.therapist_id
+	toColumn: dim_therapist.therapist_id
+
+relationship 1a7d26b0-6598-4d06-a39d-6a5c76a4aa20
+	fromCardinality: one
+	crossFilteringBehavior: bothDirections
+	fromColumn: agg_child_summary.child_id
+	toColumn: dim_child.child_id
+

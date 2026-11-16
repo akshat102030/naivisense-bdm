@@ -1,0 +1,49 @@
+{
+  "name": "NaiviSense Light",
+  "dataColors": [
+    "#2F8F83",
+    "#5B7DB1",
+    "#3BA55C",
+    "#F2B84B",
+    "#E5484D",
+    "#7B61C9",
+    "#8C8C8C",
+    "#E57BAA"
+  ],
+  "foreground": "#1F1D1A",
+  "foregroundNeutralSecondary": "#6E6A62",
+  "foregroundNeutralTertiary": "#A8A396",
+  "background": "#FFFFFF",
+  "backgroundLight": "#FAF8F3",
+  "backgroundNeutral": "#ECE8DF",
+  "tableAccent": "#2F8F83",
+  "good": "#3BA55C",
+  "neutral": "#F2B84B",
+  "bad": "#E5484D",
+  "maximum": "#3BA55C",
+  "center": "#FFFFFF",
+  "minimum": "#E5484D",
+  "null": "#C9C5BC",
+  "textClasses": {
+    "callout": {
+      "fontSize": 26,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F1D1A"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F1D1A"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F1D1A"
+    },
+    "label": {
+      "fontSize": 9,
+      "fontFace": "Segoe UI",
+      "color": "#6E6A62"
+    }
+  }
+}

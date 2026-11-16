@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        try {
+          var q = new URLSearchParams(location.search).get('theme');
+          var stored = q === 'dark' || q === 'light' ? q : localStorage.getItem('naivisense-bdm-theme');
+          var theme =
+            stored === 'dark' || stored === 'light'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <title>NaiviSense Outcome Value — therapy progress per rupee</title>
+    <meta
+      name="description"
+      content="Interactive BDM dashboard: which therapy spend earned its price? 50 synthetic children, 8 therapists, one Outcome Value Index. Therapist efficiency, value map, drivers, domains, alerts and revenue."
+    />
+    <meta name="theme-color" content="#FAF8F4" />
+    <meta property="og:site_name" content="NaiviSense" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NaiviSense Outcome Value — therapy progress per rupee" />
+    <meta
+      property="og:description"
+      content="Which therapy spend earned its price? An interactive analytics dashboard on synthetic NaiviSense data."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/inter-latin-wght-v5.3.0.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

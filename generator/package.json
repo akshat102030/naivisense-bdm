@@ -1,0 +1,23 @@
+{
+  "name": "naivisense-bdm-generator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Deterministic synthetic NaiviSense data generator and raw to processed transformation",
+  "scripts": {
+    "seed": "tsx seed-synthetic.ts",
+    "seed:write": "tsx seed-synthetic.ts --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bson": "^6.10.0",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.3.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.10.5",
+    "typescript": "^5.4.5"
+  }
+}

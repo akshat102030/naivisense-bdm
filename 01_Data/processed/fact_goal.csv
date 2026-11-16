@@ -1,0 +1,146 @@
+goal_id,child_id,title,status,priority,created_date,target_date,is_completed
+579c86557a7a9279e92a2bdb,6fda673df2cc4520a421ebbc,Reduce tantrums to <2/week,completed,1,2026-03-22,2026-12-17,1
+fcfad3b0c10fbd1a9c417233,6fda673df2cc4520a421ebbc,Recognise letters A-Z,proposed,2,2026-03-17,2026-08-14,0
+71986611c76c63677201c2e7,a2c609e89cce98dda07df7f4,Use 2-word phrases,completed,1,2025-12-18,2026-05-17,1
+1f8e69a762d757844a1804be,a2c609e89cce98dda07df7f4,Respond to name consistently,active,1,2025-12-18,2026-07-16,0
+6b6b8bff117b3ed46550b5f1,a2c609e89cce98dda07df7f4,Hold pencil with tripod grip,completed,2,2025-12-26,2026-04-25,1
+7e9cdb41c9906735a615cfc9,2bcdac0654f6c9227a4e7406,Hold pencil with tripod grip,active,1,2025-12-13,2026-05-12,0
+8da4f823243d301a0cffc7fb,3c58304c766273ed4750d2d6,Use 2-word phrases,completed,1,2026-05-30,2026-12-26,1
+002e308b4fc6ce83fb4ea2d3,3c58304c766273ed4750d2d6,Hold pencil with tripod grip,active,2,2026-06-16,2026-10-14,0
+58eb29f0fdeea770d98eef52,3c58304c766273ed4750d2d6,Reduce tantrums to <2/week,paused,3,2026-06-14,2026-09-12,0
+4909a867ee6d1ba8c9adc8bd,c89980d8b2e26870b9a8ba02,Reduce tantrums to <2/week,proposed,1,2026-09-07,2027-05-05,0
+4cfd917c0ef19511c1850580,c89980d8b2e26870b9a8ba02,Transition between tasks calmly,active,1,2026-09-06,2027-04-04,0
+b21ad5f25a3bbf30cd3f3a8d,c89980d8b2e26870b9a8ba02,Use 2-word phrases,active,2,2026-08-27,2027-02-23,0
+8a6947504f2da79a95aa82ca,c89980d8b2e26870b9a8ba02,Hold pencil with tripod grip,active,3,2026-09-02,2026-12-31,0
+cbdfbba79c64576283a4fff5,c89980d8b2e26870b9a8ba02,Tolerate varied textures,completed,3,2026-09-04,2027-02-01,1
+1f63ad29a0e8d6c161060248,48c2adc6355ec4e4c930fb33,Recognise letters A-Z,active,1,2026-03-31,2026-10-27,0
+46eb201abe2ac44d7b85a93a,02fc628f8f010cc958c81694,Hold pencil with tripod grip,completed,1,2026-01-03,2026-08-01,1
+f8d6644a7f1d6318be704b00,02fc628f8f010cc958c81694,Tolerate varied textures,completed,1,2026-01-08,2026-09-05,1
+09a2c94101032b8e3d873862,02fc628f8f010cc958c81694,Use 2-word phrases,completed,2,2026-01-08,2026-06-07,1
+3be9b4739e5a40f2d45198a2,0ca73b41e9e20397e86addb0,Use 2-word phrases,active,1,2026-08-30,2027-05-27,0
+56a404315bfc2a8206bc5ce8,0ca73b41e9e20397e86addb0,Hold pencil with tripod grip,completed,2,2026-09-17,2027-04-15,1
+19a82a7f7b0d24d1ef98c353,0ca73b41e9e20397e86addb0,Reduce tantrums to <2/week,completed,3,2026-09-09,2026-12-08,1
+110c840ed671c9d027c9087e,b50d6466a99c536c19770f9b,Reduce tantrums to <2/week,active,1,2026-05-06,2026-10-03,0
+15ea0046f194a5a0e4b6ba2e,b50d6466a99c536c19770f9b,Hold pencil with tripod grip,completed,2,2026-05-08,2026-08-06,1
+6cadae511f1b453ece5385e7,b50d6466a99c536c19770f9b,Tolerate varied textures,active,2,2026-04-27,2026-10-24,0
+d5bbe278f5c2305fd76fddf1,b50d6466a99c536c19770f9b,Recognise letters A-Z,completed,3,2026-05-02,2026-07-31,1
+0f5fdf0e28f437a2604174fb,b50d6466a99c536c19770f9b,Count objects to 20,proposed,3,2026-05-07,2026-12-03,0
+5339181c13fd7bcb653ef300,e2e5710e5c51a90eb9aef40e,Use 2-word phrases,active,1,2026-03-19,2026-10-15,0
+e1f145129b24b5e6eccadd65,e2e5710e5c51a90eb9aef40e,Respond to name consistently,active,1,2026-03-20,2026-07-18,0
+fa1aacf20d4d1ff2bf480ed5,e2e5710e5c51a90eb9aef40e,Hold pencil with tripod grip,completed,2,2026-03-06,2026-09-02,1
+37782cc37ba13179ddbd1f29,512a626ca4bf6abd8d78516a,Use 2-word phrases,completed,1,2025-11-23,2026-08-20,1
+e0aa595423d01e45658ea835,512a626ca4bf6abd8d78516a,Respond to name consistently,completed,1,2025-11-25,2026-04-24,1
+b7133b4aef34120a9e9ebf79,512a626ca4bf6abd8d78516a,Hold pencil with tripod grip,completed,2,2025-11-26,2026-03-26,1
+d53246d4bcb9628f44717ae5,512a626ca4bf6abd8d78516a,Reduce tantrums to <2/week,completed,3,2025-12-06,2026-04-05,1
+5864708f6acab8458f73a8c1,e6370164795e841d39d04fcd,Use 2-word phrases,completed,1,2025-12-01,2026-03-01,1
+beb0b4833fbbb4a640a0fa15,e6370164795e841d39d04fcd,Respond to name consistently,completed,1,2025-11-25,2026-08-22,1
+369da79e1054096ed84e15ef,e6370164795e841d39d04fcd,Hold pencil with tripod grip,completed,2,2025-11-19,2026-05-18,1
+f7c2bbf4e8bc37e1abbbad4b,ce0bbb08882760c731062fdf,Recognise letters A-Z,active,1,2026-08-07,2027-05-04,0
+3aecd8d541f4632edc8d8e6c,ce0bbb08882760c731062fdf,Count objects to 20,active,1,2026-08-08,2027-04-05,0
+981c98efdfe4beeda388d603,ce0bbb08882760c731062fdf,Hold pencil with tripod grip,active,2,2026-07-31,2026-11-28,0
+beeb64661507be2ec5db2dad,9fcf4bd492eb5bfda9aec64b,Reduce tantrums to <2/week,active,1,2026-01-20,2026-06-19,0
+39326b123a3a12100af77fb0,9fcf4bd492eb5bfda9aec64b,Transition between tasks calmly,completed,1,2026-01-17,2026-09-14,1
+2a590b7dafd3dac8df9f5c7f,9fcf4bd492eb5bfda9aec64b,Hold pencil with tripod grip,completed,2,2026-01-16,2026-04-16,1
+49a2c9993cf99c5c8c11ef0b,9fcf4bd492eb5bfda9aec64b,Tolerate varied textures,completed,2,2026-01-01,2026-07-30,1
+723278cb3805a9bee76524b8,9fcf4bd492eb5bfda9aec64b,Use 2-word phrases,completed,3,2026-01-12,2026-04-12,1
+0ff405fb9490faddfdb832ee,9fcf4bd492eb5bfda9aec64b,Respond to name consistently,completed,3,2026-01-07,2026-06-06,1
+fdb0d56ec5bc6815119ed923,2902339d1107778693ca8748,Use 2-word phrases,completed,1,2026-04-08,2026-12-04,1
+5492cef7bbf59e976d67687f,2902339d1107778693ca8748,Hold pencil with tripod grip,completed,2,2026-04-10,2026-09-07,1
+c68dcb6010234e0973f78b46,2902339d1107778693ca8748,Tolerate varied textures,active,2,2026-04-13,2026-10-10,0
+40411c96a4485968e32213ee,2902339d1107778693ca8748,Reduce tantrums to <2/week,completed,3,2026-04-09,2026-10-06,1
+e5f1d95d8c8cdf6c5c78eafa,2902339d1107778693ca8748,Transition between tasks calmly,completed,3,2026-04-12,2026-08-10,1
+3466e1b08ef01d6b44c52bc5,a0bc5bad1ba4a65f11c9edea,Recognise letters A-Z,paused,1,2025-10-29,2026-05-27,0
+861cb30e8f3430e9cf9b0c53,d0abdb730e4d3c4ec59e85ed,Reduce tantrums to <2/week,completed,1,2026-03-06,2026-08-03,1
+439738134306261c243a6b88,d0abdb730e4d3c4ec59e85ed,Hold pencil with tripod grip,active,2,2026-02-28,2026-06-28,0
+4a5e1117f3a5aefecb6f190c,d0abdb730e4d3c4ec59e85ed,Tolerate varied textures,active,2,2026-03-04,2026-08-01,0
+2ebf58b9a53bb10bd6dff32b,14b337f3f2a5f15828e58cad,Recognise letters A-Z,active,1,2025-11-05,2026-04-04,0
+099fdf0452ee09a2cbc53d40,14b337f3f2a5f15828e58cad,Count objects to 20,completed,1,2025-10-30,2026-06-27,1
+08ff83a855d5b5f108f0a9b3,14b337f3f2a5f15828e58cad,Reduce tantrums to <2/week,completed,2,2025-11-06,2026-05-05,1
+5d7e6afb2bfd5cbd84db0980,14b337f3f2a5f15828e58cad,Transition between tasks calmly,active,2,2025-11-10,2026-02-08,0
+3d428a96f2bfc56e0978f681,9ad39a4b224931322777434f,Recognise letters A-Z,active,1,2026-08-11,2027-03-09,0
+5a947d7cea616f4cae31eb25,9ad39a4b224931322777434f,Count objects to 20,completed,1,2026-08-12,2027-01-09,1
+6df186a4a6ac25fa503d3154,9ad39a4b224931322777434f,Reduce tantrums to <2/week,completed,2,2026-08-02,2026-11-30,1
+2192e98337da19dfa7c3a92e,9ad39a4b224931322777434f,Transition between tasks calmly,active,2,2026-08-10,2027-04-07,0
+320c7bd065974c94cd8733d2,d068c12879344610a46fa760,Use 2-word phrases,active,1,2026-03-11,2026-08-08,0
+df32c7179e2b86116b7da7da,d068c12879344610a46fa760,Hold pencil with tripod grip,proposed,2,2026-03-27,2026-09-23,0
+1e79fe21fe5bfb1c1e38fb71,d068c12879344610a46fa760,Tolerate varied textures,completed,2,2026-03-22,2026-10-18,1
+77112d96683f2fad008c2be5,bdf4a7a65a7904b5e6d517fa,Use 2-word phrases,active,1,2026-07-19,2026-12-16,0
+1684fa7ea06b10601221c288,bdf4a7a65a7904b5e6d517fa,Hold pencil with tripod grip,paused,2,2026-07-12,2027-04-08,0
+c05206b06b9af4a6022fb358,4870d4b8b4c41ad2b2a10344,Recognise letters A-Z,completed,1,2026-02-23,2026-10-21,1
+218213f5ad8adc3d016caeba,acbd1e053d135d3ccd6bd013,Recognise letters A-Z,completed,1,2025-11-07,2026-06-05,1
+00310b4ad418739faf5e054f,acbd1e053d135d3ccd6bd013,Count objects to 20,proposed,1,2025-11-18,2026-02-16,0
+41f8ee5a7fa64df19bb9489a,16ff9e81edf8ca7d24fe6963,Reduce tantrums to <2/week,completed,1,2026-03-01,2026-07-29,1
+b05313426292b0ab282023d4,16ff9e81edf8ca7d24fe6963,Hold pencil with tripod grip,completed,2,2026-02-28,2026-10-26,1
+b75f418a983ac4df3daf8167,faa72a83f58f9c9b8f1e8487,Use 2-word phrases,active,1,2026-04-18,2026-08-16,0
+aa91c397008f3dc81d9d3ad4,faa72a83f58f9c9b8f1e8487,Hold pencil with tripod grip,active,2,2026-04-12,2026-08-10,0
+f2cfe771c8c955cc5e53ba7a,b1e18aac80d9b26ffde196c5,Recognise letters A-Z,active,1,2025-12-30,2026-09-26,0
+09a4d6ef7e87d0a0b0d1a259,b1e18aac80d9b26ffde196c5,Count objects to 20,completed,1,2026-01-12,2026-04-12,1
+335d26e6c26eda56022802d5,b1e18aac80d9b26ffde196c5,Reduce tantrums to <2/week,completed,2,2025-12-28,2026-08-25,1
+9f3ab71931a598a7964b0786,b1e18aac80d9b26ffde196c5,Hold pencil with tripod grip,completed,3,2026-01-06,2026-10-03,1
+7c43464998c01e75c1362a6f,8421c055b0dbb1d34ca0cb30,Reduce tantrums to <2/week,active,1,2026-08-27,2027-02-23,0
+3f3fb7ae5cc36398ea23b4e4,8421c055b0dbb1d34ca0cb30,Hold pencil with tripod grip,active,2,2026-08-30,2027-01-27,0
+680da242a1ddc534352e64ff,8421c055b0dbb1d34ca0cb30,Recognise letters A-Z,completed,3,2026-08-25,2027-03-23,1
+efcb2249c4a6d14e9f081319,8421c055b0dbb1d34ca0cb30,Count objects to 20,completed,3,2026-08-25,2027-02-21,1
+3b6c8c4fcde973d53abfd925,85e85c18a7adbd1a434296cf,Recognise letters A-Z,active,1,2026-06-06,2027-01-02,0
+547d0cc99d31f01726f0cb9a,85e85c18a7adbd1a434296cf,Count objects to 20,active,1,2026-06-10,2026-11-07,0
+507d848dad568b47860f34dd,85e85c18a7adbd1a434296cf,Hold pencil with tripod grip,active,2,2026-06-10,2026-12-07,0
+057e5cf5db4a77d8efd41df3,b3b785429a4b84887ccfeaa3,Reduce tantrums to <2/week,proposed,1,2026-03-28,2026-07-26,0
+8cfb4fb4d269143564935ae7,1ca20488def25c5bbfad8838,Recognise letters A-Z,completed,1,2026-09-21,2027-02-18,1
+5ab1020e0b0689b8cb3ae64d,1ca20488def25c5bbfad8838,Count objects to 20,completed,1,2026-09-16,2027-06-13,1
+db5c94277c2b41b120de27d1,1ca20488def25c5bbfad8838,Hold pencil with tripod grip,proposed,2,2026-09-12,2027-03-11,0
+b8d9e132746834a708ad192f,e0dcf07f3d1d640f7d959e84,Reduce tantrums to <2/week,completed,1,2026-02-01,2026-08-30,1
+143a861d971bba209d41fa7e,e0dcf07f3d1d640f7d959e84,Transition between tasks calmly,active,1,2026-02-06,2026-05-07,0
+e000fc9fcbb060c9e985448c,e0dcf07f3d1d640f7d959e84,Hold pencil with tripod grip,completed,2,2026-01-31,2026-10-28,1
+ec65a63557dd946c850cbcf9,e0dcf07f3d1d640f7d959e84,Recognise letters A-Z,active,3,2026-01-31,2026-05-01,0
+25a7b61eed7c9e9129cb3909,fb5cb02fc6ffbc269ccecde0,Recognise letters A-Z,proposed,1,2025-12-17,2026-04-16,0
+7ed3922cbd469866e0771b14,fb5cb02fc6ffbc269ccecde0,Count objects to 20,completed,1,2025-12-14,2026-05-13,1
+1fd1d0b39195c4d4cefbb789,fb5cb02fc6ffbc269ccecde0,Reduce tantrums to <2/week,completed,2,2025-12-17,2026-09-13,1
+2b886b7f62fa0986055148e4,fb5cb02fc6ffbc269ccecde0,Transition between tasks calmly,active,2,2025-12-22,2026-07-20,0
+983e5e3f27f40b65a1347fb7,8f8d98dd7309d59672709fcd,Use 2-word phrases,completed,1,2026-02-10,2026-06-10,1
+16f805479dec8b4d735ce48f,8f8d98dd7309d59672709fcd,Respond to name consistently,paused,1,2026-02-27,2026-05-28,0
+777204fecbdb2afc9e4e5d63,b86c403ff28123ab1c3076fb,Use 2-word phrases,completed,1,2026-02-27,2026-09-25,1
+ddb22f0ebfc476b37829238f,b86c403ff28123ab1c3076fb,Respond to name consistently,completed,1,2026-03-01,2026-11-26,1
+2b0b5a14acb75285fcaeb2d6,acc685896ebb23a787f8b89c,Recognise letters A-Z,completed,1,2025-11-02,2026-05-31,1
+f11b97912d5b76ab71a31a11,acc685896ebb23a787f8b89c,Reduce tantrums to <2/week,completed,2,2025-11-01,2026-03-31,1
+b6e6edcfa40214778e135557,d89ae22d048823a6e92629c8,Use 2-word phrases,active,1,2026-08-06,2027-04-03,0
+3e3c76f62230bc713833a3ac,d89ae22d048823a6e92629c8,Reduce tantrums to <2/week,active,2,2026-08-15,2027-05-12,0
+856c93f70754ae5c4043383e,29c0e7bd9eab3251108adef9,Recognise letters A-Z,active,1,2026-02-28,2026-09-26,0
+c2503d9ba421236d579cb6ba,29c0e7bd9eab3251108adef9,Count objects to 20,paused,1,2026-03-01,2026-10-27,0
+7009595ba1672dcdf0810bad,29c0e7bd9eab3251108adef9,Hold pencil with tripod grip,completed,2,2026-03-01,2026-10-27,1
+b4ba96a7bd5e78cbd7fca08d,7625557ee5a400dac67aeab5,Hold pencil with tripod grip,active,1,2026-08-01,2027-04-28,0
+6571cc40114beb3b54d51133,7625557ee5a400dac67aeab5,Recognise letters A-Z,active,2,2026-08-04,2027-04-01,0
+acb90795326ec5443ca3b5a6,48611f089dc497ec976dfe46,Use 2-word phrases,active,1,2026-04-01,2026-11-27,0
+21cbaa8e16c3ff6ad6cb7bc8,48611f089dc497ec976dfe46,Respond to name consistently,active,1,2026-04-05,2026-08-03,0
+78023f75d7c3da1efa7d4430,591bbe7d8c024b5f16a60686,Recognise letters A-Z,active,1,2026-06-25,2027-03-22,0
+5e54d968c41a82724058497c,591bbe7d8c024b5f16a60686,Count objects to 20,paused,1,2026-06-24,2027-03-21,0
+d832ecec6986aaea0db72b88,591bbe7d8c024b5f16a60686,Use 2-word phrases,active,2,2026-06-18,2026-11-15,0
+3f742c5a9a735f38dfd8c0db,591bbe7d8c024b5f16a60686,Respond to name consistently,completed,2,2026-06-17,2026-10-15,1
+931df1212cd8a70073eac913,c7ac187e039247b977206098,Use 2-word phrases,active,1,2025-12-27,2026-09-23,0
+ae3cae6ae0b95c9873edca41,c7ac187e039247b977206098,Respond to name consistently,completed,1,2025-12-18,2026-04-17,1
+850fb26ba005110b7fa949a3,c7ac187e039247b977206098,Recognise letters A-Z,paused,2,2025-12-19,2026-07-17,0
+e8e67ad406702535b0b061f5,c7ac187e039247b977206098,Count objects to 20,completed,2,2026-01-05,2026-09-02,1
+faab3b93652fb0d136b51c46,9ad253ec28122a24dd728cc7,Reduce tantrums to <2/week,paused,1,2026-02-27,2026-11-24,0
+f403ebbed1d40deaa8d2843e,9fd78e6050c7e1c03e753194,Use 2-word phrases,active,1,2026-07-29,2027-03-26,0
+8ad0e3bbf767079155974670,9fd78e6050c7e1c03e753194,Recognise letters A-Z,completed,2,2026-07-24,2027-04-20,1
+e24a086614af63050e705f50,9fd78e6050c7e1c03e753194,Hold pencil with tripod grip,completed,3,2026-07-26,2026-10-24,1
+7f5781920cb855abed61dbf3,9fd78e6050c7e1c03e753194,Tolerate varied textures,completed,3,2026-07-26,2027-04-22,1
+049ae1c5741102933df86531,adad4bc51310cdcf9cda95f0,Recognise letters A-Z,active,1,2026-08-17,2027-01-14,0
+658af048237807511d26dddd,adad4bc51310cdcf9cda95f0,Count objects to 20,active,1,2026-08-06,2027-03-04,0
+3addbbae1f7805bd692bccd5,adad4bc51310cdcf9cda95f0,Reduce tantrums to <2/week,active,2,2026-08-03,2026-12-31,0
+e3abfc40f422e2f42ccf39b3,f0ea8faace25a9e4ce37f62e,Recognise letters A-Z,completed,1,2026-07-28,2027-04-24,1
+4b0c73fc1ec0d2d8094897a5,f0ea8faace25a9e4ce37f62e,Count objects to 20,completed,1,2026-08-06,2027-04-03,1
+b04ebf84d89f485766338447,f0ea8faace25a9e4ce37f62e,Reduce tantrums to <2/week,completed,2,2026-08-14,2026-12-12,1
+63d7da833c1daa7af98da6a8,7dc9eac9a4551240797263cc,Use 2-word phrases,active,1,2026-08-15,2026-12-13,0
+133d8ff9efb9ae8d184aa05f,7dc9eac9a4551240797263cc,Recognise letters A-Z,active,2,2026-08-18,2027-01-15,0
+fa2afae2d19d2b9b7ec52267,7dc9eac9a4551240797263cc,Count objects to 20,active,2,2026-08-25,2027-03-23,0
+b0cbb999fab120ce92181655,96293ae18e60f9db5110bd44,Use 2-word phrases,proposed,1,2026-06-14,2026-12-11,0
+bab5bd4f8481320b6346859f,6d286ff7b5b8a87ac2e3dc77,Recognise letters A-Z,completed,1,2026-03-23,2026-12-18,1
+47f13471151b743a66a4c31b,6d286ff7b5b8a87ac2e3dc77,Count objects to 20,completed,1,2026-03-26,2026-10-22,1
+6a6c5f96c70631540f3a2dad,6d286ff7b5b8a87ac2e3dc77,Reduce tantrums to <2/week,completed,2,2026-03-20,2026-06-18,1
+3e77e049c173ab220206cd12,6d286ff7b5b8a87ac2e3dc77,Transition between tasks calmly,completed,2,2026-03-23,2026-07-21,1
+270e5bb50861b8c1afffafa3,6d286ff7b5b8a87ac2e3dc77,Hold pencil with tripod grip,active,3,2026-04-06,2026-08-04,0
+6b58c326d75081b3679ad405,10ff8b8627c8232a6fab34f4,Use 2-word phrases,active,1,2026-02-10,2026-09-08,0
+58c9ebb8485bdb8e08411c86,10ff8b8627c8232a6fab34f4,Respond to name consistently,completed,1,2026-02-12,2026-09-10,1
+659b8262fcb5d0f232817ad4,a5e7773886d0eda0929eafac,Use 2-word phrases,completed,1,2026-04-10,2026-10-07,1
+4bed942db1e8db87eab24fa8,a5e7773886d0eda0929eafac,Respond to name consistently,completed,1,2026-04-11,2026-12-07,1
+9b6473e8cd0ed5e6b8ab0385,a5e7773886d0eda0929eafac,Hold pencil with tripod grip,active,2,2026-04-09,2026-07-08,0

@@ -1,0 +1,77 @@
+/* Tokens mirror the NaiviSense landing page (warm paper, blue accent) plus chart colours for this dashboard. */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --theme-bg: #faf8f4;
+  --theme-bg-subtle: #f5f1ea;
+  --theme-section-bg: #f8f6f0;
+  --theme-surface: #ffffff;
+  --theme-surface-subtle: #f5f2eb;
+  --theme-card-bg: rgba(255, 255, 255, 0.88);
+  --theme-card-border: rgba(15, 23, 42, 0.08);
+  --theme-track-bg: #e7e2d9;
+  --theme-text-primary: #111827;
+  --theme-text-secondary: #4b5563;
+  --theme-text-muted: #6b7280;
+  --theme-text-faint: #9ca3af;
+  --theme-border: #e2e8f0;
+  --theme-grid: rgba(15, 23, 42, 0.08);
+  --theme-accent: #2c6fbf;
+  --theme-accent-hover: #1b4676;
+  --theme-accent-subtle: rgba(44, 111, 191, 0.08);
+  --theme-accent-glow: rgba(44, 111, 191, 0.25);
+  --theme-selection-bg: #d9e7fa;
+  --theme-glass: rgba(255, 255, 255, 0.7);
+  --theme-glass-border: rgba(255, 255, 255, 0.85);
+  --theme-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --theme-shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.18);
+  --theme-overlay: rgba(11, 26, 51, 0.45);
+  --theme-cta-bg: #0a1428;
+  --c-thriving: #2c6fbf;
+  --c-efficient: #2a9d68;
+  --c-under: #d4524c;
+  --c-risk: #8a93a3;
+  --c-series-b: #c9c2b4;
+  --c-warn: #d99a1b;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --theme-bg: #12151b;
+  --theme-bg-subtle: #161b23;
+  --theme-section-bg: #151a22;
+  --theme-surface: #1b212c;
+  --theme-surface-subtle: #181d26;
+  --theme-card-bg: rgba(27, 33, 44, 0.82);
+  --theme-card-border: rgba(255, 255, 255, 0.08);
+  --theme-track-bg: rgba(255, 255, 255, 0.09);
+  --theme-text-primary: #f1f5f9;
+  --theme-text-secondary: #cbd5e1;
+  --theme-text-muted: #94a3b8;
+  --theme-text-faint: #64748b;
+  --theme-border: rgba(255, 255, 255, 0.1);
+  --theme-grid: rgba(255, 255, 255, 0.08);
+  --theme-accent: #4b82c2;
+  --theme-accent-hover: #5d94d4;
+  --theme-accent-subtle: rgba(75, 130, 194, 0.14);
+  --theme-accent-glow: rgba(75, 130, 194, 0.28);
+  --theme-selection-bg: rgba(75, 130, 194, 0.28);
+  --theme-glass: rgba(24, 29, 39, 0.72);
+  --theme-glass-border: rgba(255, 255, 255, 0.11);
+  --theme-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
+  --theme-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --theme-overlay: rgba(10, 13, 18, 0.75);
+  --theme-cta-bg: #0e1218;
+  --c-thriving: #5b95d6;
+  --c-efficient: #4cbf8a;
+  --c-under: #ec7872;
+  --c-risk: #8d97a8;
+  --c-series-b: #3a4353;
+  --c-warn: #e3b04b;
+}
+:root,
+:root[data-theme='light'] {
+  --c-violet: #7b61c9;
+}
+:root[data-theme='dark'] {
+  --c-violet: #a28bea;
+}

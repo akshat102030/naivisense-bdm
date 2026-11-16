@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "pageOrder": [
+    "home",
+    "therapy",
+    "valuemap",
+    "atrisk",
+    "drivers",
+    "domains",
+    "alerts",
+    "revenue",
+    "profile",
+    "methodology",
+    "qa"
+  ],
+  "activePageName": "home"
+}

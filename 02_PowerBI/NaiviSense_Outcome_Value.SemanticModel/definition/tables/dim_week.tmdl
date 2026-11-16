@@ -1,0 +1,13 @@
+table dim_week
+	lineageTag: 2a997454-e8ed-4401-a0e2-bbd17fe5305c
+
+	column week_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 30f3e363-3825-4dd2-87df-e4d03c9db48f
+		summarizeBy: none
+		sourceColumn: week_start
+
+	partition dim_week = calculated
+		mode: import
+		source = DISTINCT ( SELECTCOLUMNS ( dim_date, "week_start", dim_date[week_start] ) )

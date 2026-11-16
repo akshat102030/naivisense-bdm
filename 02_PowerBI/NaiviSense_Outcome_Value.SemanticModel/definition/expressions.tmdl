@@ -1,0 +1,3 @@
+expression DataFolder = "C:\Path\To\NaiviSense_BDM_Project\01_Data" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: fde9d281-22aa-4b4f-ac2a-1ea148023448
+	queryGroup: Parameters

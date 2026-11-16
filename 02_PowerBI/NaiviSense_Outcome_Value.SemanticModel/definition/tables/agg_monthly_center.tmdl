@@ -1,0 +1,76 @@
+table agg_monthly_center
+	lineageTag: 6e10ce3f-2541-495d-8ea1-6826445642b7
+
+	column month_start
+		dataType: dateTime
+		lineageTag: b5a8b5a5-c994-4cf4-bf67-7a29af57df5f
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column sessions_scheduled
+		dataType: int64
+		lineageTag: 79ee6593-f7ac-4220-87af-31dc236742bf
+		summarizeBy: sum
+		sourceColumn: sessions_scheduled
+
+	column sessions_attended
+		dataType: int64
+		lineageTag: f9ade8f9-30e0-45b5-8af5-9e71a8526800
+		summarizeBy: sum
+		sourceColumn: sessions_attended
+
+	column attendance_rate
+		dataType: double
+		lineageTag: eb5daabe-d45a-4e55-a639-550862a54165
+		summarizeBy: sum
+		sourceColumn: attendance_rate
+
+	column avg_session_score
+		dataType: double
+		lineageTag: fb8d2d55-efd9-47bc-aebd-43426be511d7
+		summarizeBy: sum
+		sourceColumn: avg_session_score
+
+	column active_children
+		dataType: int64
+		lineageTag: a1546789-3920-4615-9972-20986940bae0
+		summarizeBy: sum
+		sourceColumn: active_children
+
+	column revenue_billed_inr
+		dataType: int64
+		lineageTag: 22c0d4b2-ebd4-4c68-9220-f2c44e81e3eb
+		summarizeBy: sum
+		sourceColumn: revenue_billed_inr
+
+	column revenue_collected_inr
+		dataType: int64
+		lineageTag: 1750fb9b-ab7e-4f1b-8738-2f3e4998803a
+		summarizeBy: sum
+		sourceColumn: revenue_collected_inr
+
+	column alerts_raised
+		dataType: int64
+		lineageTag: f16055ea-5355-4f64-bd4f-c4937a52760d
+		summarizeBy: sum
+		sourceColumn: alerts_raised
+
+	column avg_overall_assessment
+		dataType: double
+		lineageTag: ea912495-1237-429b-8e71-10ffbf9e1067
+		summarizeBy: sum
+		sourceColumn: avg_overall_assessment
+
+	partition agg_monthly_center = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\agg_monthly_center.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"month_start","sessions_scheduled","sessions_attended","attendance_rate","avg_session_score","active_children","revenue_billed_inr","revenue_collected_inr","alerts_raised","avg_overall_assessment"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"month_start", type date},{"sessions_scheduled", Int64.Type},{"sessions_attended", Int64.Type},{"attendance_rate", type number},{"avg_session_score", type number},{"active_children", Int64.Type},{"revenue_billed_inr", Int64.Type},{"revenue_collected_inr", Int64.Type},{"alerts_raised", Int64.Type},{"avg_overall_assessment", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

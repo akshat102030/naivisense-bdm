@@ -1,0 +1,155 @@
+table fact_assessment
+	lineageTag: 56a58f43-8de1-42bc-a9d6-01a5e398b918
+
+	column child_id
+		dataType: string
+		lineageTag: 96e36a37-46ba-4d20-b0d9-6c2f80661985
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column assessment_date
+		dataType: dateTime
+		lineageTag: 051ae30d-6d30-4cdb-9a9f-e42f59e929dc
+		summarizeBy: none
+		sourceColumn: assessment_date
+		formatString: yyyy-mm-dd
+
+	column month_start
+		dataType: dateTime
+		lineageTag: 63f2aded-5b4d-483d-8367-7ced8d430280
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column seq
+		dataType: int64
+		lineageTag: ab357922-6d15-4a55-8805-aeaa678cfed0
+		summarizeBy: none
+		sourceColumn: seq
+
+	column assessment_type
+		dataType: string
+		lineageTag: 84622823-423e-4220-afea-df859b3fb188
+		summarizeBy: none
+		sourceColumn: assessment_type
+
+	column overall_score_pct
+		dataType: double
+		lineageTag: c4f6cf85-20d8-454f-9b06-5e962c1321e6
+		summarizeBy: sum
+		sourceColumn: overall_score_pct
+
+	column risk_level
+		dataType: string
+		lineageTag: 7d749ad2-6e0e-4a84-88eb-5c0cb71788f8
+		summarizeBy: none
+		sourceColumn: risk_level
+
+	column developmental_quotient
+		dataType: int64
+		lineageTag: 716ad70d-901f-48fc-bb96-d873b19eb597
+		summarizeBy: sum
+		sourceColumn: developmental_quotient
+
+	column attention
+		dataType: double
+		lineageTag: 9ea40343-1a39-4eb6-a164-7169cf8087e6
+		summarizeBy: sum
+		sourceColumn: attention
+
+	column behavioral
+		dataType: double
+		lineageTag: 448f7d06-ff69-46e8-910f-4d97aa73bf5d
+		summarizeBy: sum
+		sourceColumn: behavioral
+
+	column social_communication
+		dataType: double
+		lineageTag: 2905d81e-241b-44c6-99cc-f08e1e4a046c
+		summarizeBy: sum
+		sourceColumn: social_communication
+
+	column receptive_language
+		dataType: double
+		lineageTag: 9e651a3e-eff1-4ef9-a494-2caf174fbd4c
+		summarizeBy: sum
+		sourceColumn: receptive_language
+
+	column expressive_language
+		dataType: double
+		lineageTag: 2249bd98-e584-42a0-987e-41054ea29e39
+		summarizeBy: sum
+		sourceColumn: expressive_language
+
+	column speech_production
+		dataType: double
+		lineageTag: 762e9b8f-be42-4ef3-afd9-239239c8cdc0
+		summarizeBy: sum
+		sourceColumn: speech_production
+
+	column imitation
+		dataType: double
+		lineageTag: 42d0d4f9-2817-46a4-a8fb-7b520e88953c
+		summarizeBy: sum
+		sourceColumn: imitation
+
+	column visual_perception
+		dataType: double
+		lineageTag: 6f0fc20d-1dd7-460f-89a1-03bf9baeb805
+		summarizeBy: sum
+		sourceColumn: visual_perception
+
+	column fine_motor
+		dataType: double
+		lineageTag: 153825ff-4364-4d0b-949d-559c3c0c640f
+		summarizeBy: sum
+		sourceColumn: fine_motor
+
+	column gross_motor
+		dataType: double
+		lineageTag: ffe32fa4-275a-42e8-8d17-c06da04d8cf6
+		summarizeBy: sum
+		sourceColumn: gross_motor
+
+	column sensory
+		dataType: double
+		lineageTag: a6c1d3fe-11b3-4401-8a89-a2798678f3d8
+		summarizeBy: sum
+		sourceColumn: sensory
+
+	column adl
+		dataType: double
+		lineageTag: 1052984d-195a-4602-aad6-1346d6bab99b
+		summarizeBy: sum
+		sourceColumn: adl
+
+	column academics
+		dataType: double
+		lineageTag: 7dad979c-93a9-4e6f-8cf5-9835bdd27761
+		summarizeBy: sum
+		sourceColumn: academics
+
+	column cognitive
+		dataType: double
+		lineageTag: 424871ed-1de6-4ad2-bf35-1f2a21d48ad1
+		summarizeBy: sum
+		sourceColumn: cognitive
+
+	column emotional_regulation
+		dataType: double
+		lineageTag: 449e9fa1-da9d-4802-8b29-672f23757ada
+		summarizeBy: sum
+		sourceColumn: emotional_regulation
+
+	partition fact_assessment = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_assessment.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"assessment_date","month_start","seq","overall_score_pct","developmental_quotient","attention","behavioral","social_communication","receptive_language","expressive_language","speech_production","imitation","visual_perception","fine_motor","gross_motor","sensory","adl","academics","cognitive","emotional_regulation"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"child_id", type text},{"assessment_date", type date},{"month_start", type date},{"seq", Int64.Type},{"assessment_type", type text},{"overall_score_pct", type number},{"risk_level", type text},{"developmental_quotient", Int64.Type},{"attention", type number},{"behavioral", type number},{"social_communication", type number},{"receptive_language", type number},{"expressive_language", type number},{"speech_production", type number},{"imitation", type number},{"visual_perception", type number},{"fine_motor", type number},{"gross_motor", type number},{"sensory", type number},{"adl", type number},{"academics", type number},{"cognitive", type number},{"emotional_regulation", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

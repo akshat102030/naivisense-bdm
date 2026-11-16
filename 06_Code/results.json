@@ -1,0 +1,567 @@
+{
+  "students": 50,
+  "therapists": 8,
+  "sessions_past": 6024,
+  "sessions_attended": 5027,
+  "attendance_rate": 0.8345,
+  "billed_inr": 4188500.0,
+  "collected_inr": 3295000.0,
+  "outstanding_inr": 785500.0,
+  "collection_rate": 0.7867,
+  "avg_improvement_pts": 9.74,
+  "children_improved_pct": 1.0,
+  "total_progress_points": 5602.6,
+  "league_vi_check": 1.0,
+  "median_fee": 80250.0,
+  "median_pp": 95.4,
+  "quadrants": {
+    "Thriving": 20,
+    "Efficient": 5,
+    "Under-served": 5,
+    "At-risk": 20
+  },
+  "vi_by_diagnosis": {
+    "ADHD": {
+      "children": 9,
+      "fees": 665000,
+      "progress_pts": 1042.3,
+      "value_index": 1.17
+    },
+    "Autism Spectrum Disorder": {
+      "children": 10,
+      "fees": 842000,
+      "progress_pts": 1127.3,
+      "value_index": 1.0
+    },
+    "Cerebral Palsy": {
+      "children": 2,
+      "fees": 156000,
+      "progress_pts": 131.5,
+      "value_index": 0.63
+    },
+    "Down Syndrome": {
+      "children": 6,
+      "fees": 490000,
+      "progress_pts": 648.1,
+      "value_index": 0.99
+    },
+    "Global Developmental Delay": {
+      "children": 7,
+      "fees": 607000,
+      "progress_pts": 830.4,
+      "value_index": 1.02
+    },
+    "Sensory Processing Disorder": {
+      "children": 5,
+      "fees": 407500,
+      "progress_pts": 650.6,
+      "value_index": 1.19
+    },
+    "Speech & Language Delay": {
+      "children": 11,
+      "fees": 1021000,
+      "progress_pts": 1172.4,
+      "value_index": 0.86
+    }
+  },
+  "vi_by_severity": {
+    "mild": {
+      "children": 18,
+      "fees": 1556500,
+      "progress_pts": 2213.9,
+      "value_index": 1.06
+    },
+    "moderate": {
+      "children": 20,
+      "fees": 1659000,
+      "progress_pts": 2480.0,
+      "value_index": 1.12
+    },
+    "severe": {
+      "children": 12,
+      "fees": 973000,
+      "progress_pts": 908.7,
+      "value_index": 0.7
+    }
+  },
+  "vi_by_involvement": {
+    "high": {
+      "children": 14,
+      "fees": 1170500,
+      "progress_pts": 2044.8,
+      "value_index": 1.31
+    },
+    "low": {
+      "children": 11,
+      "fees": 855500,
+      "progress_pts": 809.8,
+      "value_index": 0.71
+    },
+    "medium": {
+      "children": 25,
+      "fees": 2162500,
+      "progress_pts": 2748.0,
+      "value_index": 0.95
+    }
+  },
+  "vi_by_age_band": {
+    "11-12": {
+      "children": 3,
+      "fees": 297500,
+      "progress_pts": 500.7,
+      "value_index": 1.26
+    },
+    "3-4": {
+      "children": 14,
+      "fees": 1025500,
+      "progress_pts": 1145.9,
+      "value_index": 0.84
+    },
+    "5-7": {
+      "children": 18,
+      "fees": 1546500,
+      "progress_pts": 2221.8,
+      "value_index": 1.07
+    },
+    "8-10": {
+      "children": 15,
+      "fees": 1319000,
+      "progress_pts": 1734.2,
+      "value_index": 0.98
+    }
+  },
+  "vi_by_therapy_count": {
+    "1": {
+      "children": 12,
+      "fees": 850000,
+      "progress_pts": 1104.6,
+      "value_index": 0.97
+    },
+    "2": {
+      "children": 26,
+      "fees": 2134000,
+      "progress_pts": 2801.2,
+      "value_index": 0.98
+    },
+    "3": {
+      "children": 12,
+      "fees": 1204500,
+      "progress_pts": 1696.8,
+      "value_index": 1.05
+    }
+  },
+  "vi_by_monthly_fee_tier": {
+    "1 Under 12k": {
+      "children": 12,
+      "fees": 850000,
+      "progress_pts": 1104.6,
+      "value_index": 0.97
+    },
+    "2 12k-15k": {
+      "children": 26,
+      "fees": 2134000,
+      "progress_pts": 2801.2,
+      "value_index": 0.98
+    },
+    "3 15k and above": {
+      "children": 12,
+      "fees": 1204500,
+      "progress_pts": 1696.8,
+      "value_index": 1.05
+    }
+  },
+  "monthly_fee_tier_detail": {
+    "1 Under 12k": {
+      "avg_attendance": 0.785,
+      "avg_improvement_pts": 6.9
+    },
+    "2 12k-15k": {
+      "avg_attendance": 0.84,
+      "avg_improvement_pts": 9.8
+    },
+    "3 15k and above": {
+      "avg_attendance": 0.84,
+      "avg_improvement_pts": 12.4
+    }
+  },
+  "corr_monthly_fee_vs_improvement": 0.23,
+  "corr_value_index_vs_attendance": 0.478,
+  "vi_by_therapist": {
+    "Amit Joshi": {
+      "sessions": 670,
+      "fees": 518515,
+      "progress_pts": 613.8,
+      "value_index": 0.88
+    },
+    "Imran Sheikh": {
+      "sessions": 519,
+      "fees": 406781,
+      "progress_pts": 576.4,
+      "value_index": 1.06
+    },
+    "Kavya Iyer": {
+      "sessions": 529,
+      "fees": 432500,
+      "progress_pts": 688.8,
+      "value_index": 1.19
+    },
+    "Neha Bansal": {
+      "sessions": 742,
+      "fees": 615025,
+      "progress_pts": 909.8,
+      "value_index": 1.11
+    },
+    "Priya Mehta": {
+      "sessions": 698,
+      "fees": 658562,
+      "progress_pts": 793.7,
+      "value_index": 0.9
+    },
+    "Ritu Malhotra": {
+      "sessions": 639,
+      "fees": 579542,
+      "progress_pts": 794.0,
+      "value_index": 1.02
+    },
+    "Rohan Verma": {
+      "sessions": 640,
+      "fees": 472137,
+      "progress_pts": 621.4,
+      "value_index": 0.98
+    },
+    "Sneha Kapoor": {
+      "sessions": 590,
+      "fees": 505437,
+      "progress_pts": 604.9,
+      "value_index": 0.89
+    }
+  },
+  "vi_by_therapy_type": {
+    "behavior": {
+      "sessions": 1109,
+      "fees": 912218,
+      "progress_pts": 1181.3,
+      "value_index": 0.97
+    },
+    "ot": {
+      "sessions": 1382,
+      "fees": 1087162,
+      "progress_pts": 1531.2,
+      "value_index": 1.05
+    },
+    "special_ed": {
+      "sessions": 1309,
+      "fees": 1098057,
+      "progress_pts": 1407.8,
+      "value_index": 0.96
+    },
+    "speech": {
+      "sessions": 1227,
+      "fees": 1091062,
+      "progress_pts": 1482.5,
+      "value_index": 1.02
+    }
+  },
+  "corr_attendance_vs_improvement": 0.461,
+  "corr_attendance_vs_progress_points": 0.428,
+  "corr_home_tasks_vs_improvement": 0.463,
+  "corr_total_fees_vs_progress_points": 0.619,
+  "corr_involvement_vs_improvement": 0.43,
+  "by_involvement": {
+    "low": {
+      "children": 11,
+      "attendance": 0.724,
+      "improvement_pts": 5.4,
+      "home_tasks_per_week": 1.75,
+      "collection_rate": 0.811
+    },
+    "medium": {
+      "children": 25,
+      "attendance": 0.827,
+      "improvement_pts": 9.7,
+      "home_tasks_per_week": 3.19,
+      "collection_rate": 0.796
+    },
+    "high": {
+      "children": 14,
+      "attendance": 0.908,
+      "improvement_pts": 13.2,
+      "home_tasks_per_week": 4.65,
+      "collection_rate": 0.752
+    }
+  },
+  "domain_gain": {
+    "visual_perception": {
+      "group": "Cognition & Learning",
+      "avg_gain_pts": 13.1
+    },
+    "attention": {
+      "group": "Behaviour & Regulation",
+      "avg_gain_pts": 11.4
+    },
+    "gross_motor": {
+      "group": "Motor & Daily Living",
+      "avg_gain_pts": 10.2
+    },
+    "fine_motor": {
+      "group": "Motor & Daily Living",
+      "avg_gain_pts": 10.2
+    },
+    "sensory": {
+      "group": "Motor & Daily Living",
+      "avg_gain_pts": 10.1
+    },
+    "adl": {
+      "group": "Motor & Daily Living",
+      "avg_gain_pts": 9.9
+    },
+    "expressive_language": {
+      "group": "Communication",
+      "avg_gain_pts": 9.8
+    },
+    "receptive_language": {
+      "group": "Communication",
+      "avg_gain_pts": 9.3
+    },
+    "cognitive": {
+      "group": "Cognition & Learning",
+      "avg_gain_pts": 9.1
+    },
+    "academics": {
+      "group": "Cognition & Learning",
+      "avg_gain_pts": 9.0
+    },
+    "social_communication": {
+      "group": "Communication",
+      "avg_gain_pts": 9.0
+    },
+    "speech_production": {
+      "group": "Communication",
+      "avg_gain_pts": 9.0
+    },
+    "behavioral": {
+      "group": "Behaviour & Regulation",
+      "avg_gain_pts": 8.9
+    },
+    "imitation": {
+      "group": "Cognition & Learning",
+      "avg_gain_pts": 8.6
+    },
+    "emotional_regulation": {
+      "group": "Behaviour & Regulation",
+      "avg_gain_pts": 8.5
+    }
+  },
+  "alerts_total": 133,
+  "alerts_open": 5,
+  "alert_sla": {
+    "high": {
+      "alerts": 29,
+      "avg_hrs_ack": 1.6,
+      "avg_hrs_resolve": 17.2,
+      "ack_within_4h_pct": 1.0
+    },
+    "medium": {
+      "alerts": 49,
+      "avg_hrs_ack": 16.1,
+      "avg_hrs_resolve": 81.1,
+      "ack_within_4h_pct": 0.065
+    },
+    "low": {
+      "alerts": 55,
+      "avg_hrs_ack": 16.1,
+      "avg_hrs_resolve": 84.7,
+      "ack_within_4h_pct": 0.056
+    }
+  },
+  "alerts_by_type": {
+    "emotional_stress": 30,
+    "sleep_issue": 28,
+    "aggression": 20,
+    "fever": 20,
+    "regression": 15,
+    "other": 9,
+    "injury": 8,
+    "seizure": 3
+  },
+  "alerts_per_child_by_severity": {
+    "mild": 1.33,
+    "moderate": 2.85,
+    "severe": 4.33
+  },
+  "payments_by_status": {
+    "paid": {
+      "count": 297,
+      "inr": 3370000.0
+    },
+    "pending": {
+      "count": 43,
+      "inr": 562000.0
+    },
+    "failed": {
+      "count": 18,
+      "inr": 223500.0
+    },
+    "refunded": {
+      "count": 8,
+      "inr": 108000.0
+    }
+  },
+  "failed_payments": 18,
+  "top_outstanding": [
+    {
+      "child": "C028",
+      "outstanding_inr": 65000.0
+    },
+    {
+      "child": "C014",
+      "outstanding_inr": 49500.0
+    },
+    {
+      "child": "C003",
+      "outstanding_inr": 33000.0
+    },
+    {
+      "child": "C047",
+      "outstanding_inr": 33000.0
+    },
+    {
+      "child": "C020",
+      "outstanding_inr": 29000.0
+    }
+  ],
+  "churn_risk_children": 9,
+  "red_risk_children": 12,
+  "risk_improved_children": 22,
+  "engagement_segments": {
+    "High": 13,
+    "Medium": 27,
+    "Low": 10
+  },
+  "top_efficient": [
+    {
+      "child": "C002",
+      "fees": 91000.0,
+      "pp": 244.5,
+      "vi": 2.01
+    },
+    {
+      "child": "C018",
+      "fees": 91000.0,
+      "pp": 223.6,
+      "vi": 1.84
+    },
+    {
+      "child": "C014",
+      "fees": 115500.0,
+      "pp": 281.3,
+      "vi": 1.82
+    },
+    {
+      "child": "C041",
+      "fees": 91000.0,
+      "pp": 218.6,
+      "vi": 1.8
+    },
+    {
+      "child": "C012",
+      "fees": 91000.0,
+      "pp": 210.7,
+      "vi": 1.73
+    }
+  ],
+  "lowest_value": [
+    {
+      "child": "C042",
+      "fees": 77000.0,
+      "pp": 44.5,
+      "vi": 0.43
+    },
+    {
+      "child": "C046",
+      "fees": 52000.0,
+      "pp": 28.2,
+      "vi": 0.41
+    },
+    {
+      "child": "C025",
+      "fees": 101500.0,
+      "pp": 44.9,
+      "vi": 0.33
+    },
+    {
+      "child": "C013",
+      "fees": 72500.0,
+      "pp": 30.3,
+      "vi": 0.31
+    },
+    {
+      "child": "C036",
+      "fees": 72500.0,
+      "pp": 28.1,
+      "vi": 0.29
+    }
+  ],
+  "monthly": [
+    {
+      "month_start": "2026-05-01",
+      "sessions_scheduled": "643",
+      "attendance_rate": "0.83",
+      "revenue_billed_inr": "459500",
+      "revenue_collected_inr": "356000",
+      "avg_session_score": "5.81"
+    },
+    {
+      "month_start": "2026-06-01",
+      "sessions_scheduled": "769",
+      "attendance_rate": "0.86",
+      "revenue_billed_inr": "483500",
+      "revenue_collected_inr": "398000",
+      "avg_session_score": "6.08"
+    },
+    {
+      "month_start": "2026-07-01",
+      "sessions_scheduled": "889",
+      "attendance_rate": "0.81",
+      "revenue_billed_inr": "604500",
+      "revenue_collected_inr": "507000",
+      "avg_session_score": "6.27"
+    },
+    {
+      "month_start": "2026-08-01",
+      "sessions_scheduled": "968",
+      "attendance_rate": "0.85",
+      "revenue_billed_inr": "661000",
+      "revenue_collected_inr": "585500",
+      "avg_session_score": "6.24"
+    },
+    {
+      "month_start": "2026-09-01",
+      "sessions_scheduled": "1123",
+      "attendance_rate": "0.85",
+      "revenue_billed_inr": "669500",
+      "revenue_collected_inr": "603500",
+      "avg_session_score": "6.41"
+    },
+    {
+      "month_start": "2026-10-01",
+      "sessions_scheduled": "1122",
+      "attendance_rate": "0.85",
+      "revenue_billed_inr": "668000",
+      "revenue_collected_inr": "517000",
+      "avg_session_score": "6.64"
+    },
+    {
+      "month_start": "2026-11-01",
+      "sessions_scheduled": "510",
+      "attendance_rate": "0.75",
+      "revenue_billed_inr": "668000",
+      "revenue_collected_inr": "353500",
+      "avg_session_score": "6.84"
+    }
+  ],
+  "sessions_by_mode": {
+    "online": 0.826,
+    "offline": 0.836
+  }
+}

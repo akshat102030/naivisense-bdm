@@ -1,0 +1,279 @@
+table _Measures
+	lineageTag: 2b20f2e2-5995-4ecc-ba2e-df26397c08dc
+
+	measure Students = DISTINCTCOUNT ( dim_child[child_id] )
+		formatString: 0
+		displayFolder: Core
+		lineageTag: 1fe608ea-9968-45f8-837e-c00f798de157
+
+	measure Therapists = DISTINCTCOUNT ( dim_therapist[therapist_id] )
+		formatString: 0
+		displayFolder: Core
+		lineageTag: b52b1d08-cda7-4880-be78-1fa0edcef40b
+
+	measure 'Sessions Held' = CALCULATE ( COUNTROWS ( fact_session ), fact_session[is_past] = 1 )
+		formatString: #,##0
+		displayFolder: Core
+		lineageTag: 9e7c34dc-6051-40c1-95ea-b58582004bb1
+
+	measure 'Sessions Attended' = CALCULATE ( COUNTROWS ( fact_session ), fact_session[is_attended] = 1 )
+		formatString: #,##0
+		displayFolder: Core
+		lineageTag: 09e14a32-d15f-410d-b0b9-1ccb7005a529
+
+	measure 'Attendance %' = DIVIDE ( [Sessions Attended], [Sessions Held] )
+		formatString: 0.0%
+		displayFolder: Core
+		lineageTag: a152331b-32f9-412e-b62c-6021f1591083
+
+	measure 'Avg Session Score' = AVERAGE ( fact_session[avg_session_score] )
+		formatString: 0.00
+		displayFolder: Core
+		lineageTag: 7d8d2329-7e4b-4b1c-83d2-c8097f8b2ba6
+
+	measure 'Progress Points' = SUM ( agg_child_summary[progress_points] )
+		formatString: #,##0.0
+		displayFolder: Value
+		lineageTag: 369bc199-8cc3-469c-8c83-7c5deaf2ecaf
+
+	measure 'Fees INR' = SUM ( agg_child_summary[billed_inr] )
+		formatString: "₹"#,##0
+		displayFolder: Value
+		lineageTag: a21ac73b-4fb7-4169-ae9d-bd70932f2c53
+
+	measure 'League Progress Points' = CALCULATE ( [Progress Points], ALL ( agg_child_summary ), ALL ( dim_child ) )
+		formatString: #,##0.0
+		displayFolder: Value
+		lineageTag: 1385d08e-ed1c-45c1-b2ce-3080161089aa
+
+	measure 'League Fees INR' = CALCULATE ( [Fees INR], ALL ( agg_child_summary ), ALL ( dim_child ) )
+		formatString: "₹"#,##0
+		displayFolder: Value
+		lineageTag: ed6a5934-c571-410a-af58-8d2084f3b4e4
+
+	measure 'Outcome Value Index' = DIVIDE ( DIVIDE ( [Progress Points], [League Progress Points] ), DIVIDE ( [Fees INR], [League Fees INR] ) )
+		formatString: 0.00
+		displayFolder: Value
+		lineageTag: 7cfb2ff3-6437-4444-982a-f0cfafabccab
+
+	measure 'Fair Value INR' = [League Fees INR] * DIVIDE ( [Progress Points], [League Progress Points] )
+		formatString: "₹"#,##0
+		displayFolder: Value
+		lineageTag: 0ad578bb-9413-4d7a-9726-f48cd11c2ac0
+
+	measure 'Overpay INR' = [Fees INR] - [Fair Value INR]
+		formatString: "₹"#,##0;-"₹"#,##0
+		displayFolder: Value
+		lineageTag: 23ad1e40-1e77-453e-94bd-3ac0cfc6d5d6
+
+	measure 'Therapist Progress Points' = SUM ( fact_child_therapist[attributed_progress_points] )
+		formatString: #,##0.0
+		displayFolder: Value
+		lineageTag: 602aaed5-9e51-4e2b-b8d8-dc6c9229a783
+
+	measure 'Therapist Fees INR' = SUM ( fact_child_therapist[attributed_fees_inr] )
+		formatString: "₹"#,##0
+		displayFolder: Value
+		lineageTag: d662d88e-2592-46af-83f5-467770239233
+
+	measure 'Therapist Value Index' =
+			VAR LeaguePP = CALCULATE ( [Therapist Progress Points], ALL ( fact_child_therapist ), ALL ( dim_therapist ), ALL ( dim_child ) )
+			VAR LeagueFee = CALCULATE ( [Therapist Fees INR], ALL ( fact_child_therapist ), ALL ( dim_therapist ), ALL ( dim_child ) )
+			RETURN DIVIDE ( DIVIDE ( [Therapist Progress Points], LeaguePP ), DIVIDE ( [Therapist Fees INR], LeagueFee ) )
+		formatString: 0.00
+		displayFolder: Value
+		lineageTag: c1240388-7f30-4e46-85ae-18500f595290
+
+	measure Thriving = CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[Value Group] = "Thriving" )
+		formatString: 0
+		displayFolder: Value
+		lineageTag: 5369d9d2-a3f9-4589-b27d-1658192b77f0
+
+	measure Efficient = CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[Value Group] = "Efficient" )
+		formatString: 0
+		displayFolder: Value
+		lineageTag: 5e972c6e-bec6-418b-87ef-9398703c51df
+
+	measure 'Under-served' = CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[Value Group] = "Under-served" )
+		formatString: 0
+		displayFolder: Value
+		lineageTag: 7669ee86-3ecb-4783-a01c-95890af60fdc
+
+	measure 'At-risk' = CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[Value Group] = "At-risk" )
+		formatString: 0
+		displayFolder: Value
+		lineageTag: 574e1bc1-9087-4e16-94d4-354bbfd87028
+
+	measure 'Value Group Colour' = SWITCH ( SELECTEDVALUE ( agg_child_summary[Value Group] ), "Thriving", "#5B7DB1", "Efficient", "#3BA55C", "Under-served", "#E5484D", "#8C8C8C" )
+		displayFolder: Value
+		lineageTag: 27c60918-5f88-4960-b510-1b4db4cd6a42
+
+	measure 'Value Index Colour' = IF ( [Outcome Value Index] >= 1, "#3BA55C", "#E5484D" )
+		displayFolder: Value
+		lineageTag: 4b0d4b78-2608-4f32-bb81-1ff41d268424
+
+	measure 'Avg Improvement pts' = AVERAGE ( agg_child_summary[improvement_pts] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: d9734134-f527-4759-96de-a57f7b1b8db1
+
+	measure 'Children Improved %' = DIVIDE ( CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[improvement_pts] > 0 ), COUNTROWS ( agg_child_summary ) )
+		formatString: 0%
+		displayFolder: Clinical
+		lineageTag: 09163cec-9ba5-4deb-8995-107723234a41
+
+	measure 'Avg Overall Score' = AVERAGE ( fact_assessment[overall_score_pct] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: 94b89b6e-6e71-43fb-85b2-b445eca45cd3
+
+	measure 'Latest Overall Score' = AVERAGE ( agg_child_summary[latest_overall_score] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: fe58123e-1647-4d8f-8f2a-4a6279e30ca7
+
+	measure 'Red-Risk Children' = CALCULATE ( COUNTROWS ( agg_child_summary ), agg_child_summary[latest_risk] = "red" )
+		formatString: 0
+		displayFolder: Clinical
+		lineageTag: fa005ccd-e4c2-4a7d-bd70-153d8e7232d2
+
+	measure 'Risk Improved Children' = SUM ( agg_child_summary[risk_improved] )
+		formatString: 0
+		displayFolder: Clinical
+		lineageTag: 3de58bb6-023e-4eb1-b740-ed20b94dbc1c
+
+	measure 'Churn-Risk Children' = SUM ( agg_child_summary[churn_risk] )
+		formatString: 0
+		displayFolder: Clinical
+		lineageTag: 3af2468b-eb46-4e06-bc2b-efafa6a9e71d
+
+	measure 'Churn-Risk %' = DIVIDE ( [Churn-Risk Children], COUNTROWS ( agg_child_summary ) )
+		formatString: 0%
+		displayFolder: Clinical
+		lineageTag: bb3d7cf0-c2bb-435e-a73b-d975df06a144
+
+	measure 'Domain Score' = AVERAGE ( fact_assessment_domain[score] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: 01a2857e-e412-4bfb-be28-159beedb10f7
+
+	measure 'Domain Gain pts' = CALCULATE ( AVERAGE ( fact_assessment_domain[score] ), fact_assessment_domain[is_latest] = 1 ) - CALCULATE ( AVERAGE ( fact_assessment_domain[score] ), fact_assessment_domain[is_initial] = 1 )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: f2314f58-1e71-4907-9b32-df9e320a4bc8
+
+	measure 'Domain Latest Score' = CALCULATE ( AVERAGE ( fact_assessment_domain[score] ), fact_assessment_domain[is_latest] = 1 )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: e081d017-9f9b-48cc-8139-f22cc9328b5f
+
+	measure 'Goal Completion %' = DIVIDE ( SUM ( fact_goal[is_completed] ), COUNTROWS ( fact_goal ) )
+		formatString: 0%
+		displayFolder: Clinical
+		lineageTag: 9852966d-5565-404c-a569-006ddc23bcff
+
+	measure 'Home Tasks per Week' = AVERAGE ( fact_home_engagement_weekly[home_tasks_logged] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: 1b123a97-296a-4f69-9f25-e48b26bdd10e
+
+	measure 'Meals Logged per Week' = AVERAGE ( fact_home_engagement_weekly[meals_logged] )
+		formatString: 0.0
+		displayFolder: Clinical
+		lineageTag: 9b039d99-9082-4518-826f-df7d8049a392
+
+	measure 'Alerts Raised' = COUNTROWS ( fact_alert )
+		formatString: 0
+		displayFolder: Alerts
+		lineageTag: 2e078bb5-7ba7-4e1f-9442-ae80a8ed68cc
+
+	measure 'Open Alerts' = SUM ( fact_alert[is_open] )
+		formatString: 0
+		displayFolder: Alerts
+		lineageTag: 4d3837b3-a395-4918-a338-3894099ef0f5
+
+	measure 'High Severity Alerts' = CALCULATE ( COUNTROWS ( fact_alert ), fact_alert[severity] = "high" )
+		formatString: 0
+		displayFolder: Alerts
+		lineageTag: ff4a6320-7d8e-439f-8b84-a149cdf25ec0
+
+	measure 'Avg Hrs to Acknowledge' = AVERAGE ( fact_alert[hours_to_acknowledge] )
+		formatString: 0.0
+		displayFolder: Alerts
+		lineageTag: 2c9d031b-ad21-4f00-b143-5cb57777aab9
+
+	measure 'Avg Hrs to Resolve' = AVERAGE ( fact_alert[hours_to_resolve] )
+		formatString: 0.0
+		displayFolder: Alerts
+		lineageTag: 134b54af-2cbf-43b5-9bfd-a521d438d050
+
+	measure 'Acknowledged within 4h %' = DIVIDE ( CALCULATE ( COUNTROWS ( fact_alert ), fact_alert[hours_to_acknowledge] <= 4, NOT ( ISBLANK ( fact_alert[hours_to_acknowledge] ) ) ), CALCULATE ( COUNTROWS ( fact_alert ), NOT ( ISBLANK ( fact_alert[hours_to_acknowledge] ) ) ) )
+		formatString: 0%
+		displayFolder: Alerts
+		lineageTag: 23678e2f-9d36-4341-ba96-df9e5c27119f
+
+	measure 'Billed INR' = CALCULATE ( SUM ( fact_payment[amount_inr] ), fact_payment[payment_type] = "subscription" )
+		formatString: "₹"#,##0
+		displayFolder: Revenue
+		lineageTag: 15a05899-671c-4bc1-8c80-21606e94e397
+
+	measure 'Collected INR' = CALCULATE ( SUM ( fact_payment[paid_amount_inr] ), fact_payment[payment_type] = "subscription" )
+		formatString: "₹"#,##0
+		displayFolder: Revenue
+		lineageTag: 84e9846a-304f-4929-a58d-8d5d81cb11a8
+
+	measure 'Outstanding INR' = CALCULATE ( SUM ( fact_payment[outstanding_inr] ), fact_payment[payment_type] = "subscription" )
+		formatString: "₹"#,##0
+		displayFolder: Revenue
+		lineageTag: c3ad487c-7cba-4ce9-a5e1-cc201bd8b838
+
+	measure 'Collection %' = DIVIDE ( [Collected INR], [Billed INR] )
+		formatString: 0.0%
+		displayFolder: Revenue
+		lineageTag: 781e21cd-b5d1-4cd2-91bb-53e4187c4d33
+
+	measure 'Failed Payments' = CALCULATE ( COUNTROWS ( fact_payment ), fact_payment[status] = "failed", fact_payment[payment_type] = "subscription" )
+		formatString: 0
+		displayFolder: Revenue
+		lineageTag: 4e9ba03a-0612-4944-a85b-a99c277d2411
+
+	measure 'Payment Count' = CALCULATE ( COUNTROWS ( fact_payment ), fact_payment[payment_type] = "subscription" )
+		formatString: 0
+		displayFolder: Revenue
+		lineageTag: 069e544c-7669-4c4f-9e57-14ab752784ad
+
+	measure 'League Value Index Check' = CALCULATE ( [Outcome Value Index], ALL ( dim_child ), ALL ( agg_child_summary ) )
+		formatString: 0.000
+		displayFolder: QA
+		lineageTag: bea3ed46-fba9-4c83-8715-f1c3211a46b8
+
+	measure 'Sessions Rows' = COUNTROWS ( fact_session )
+		formatString: #,##0
+		displayFolder: QA
+		lineageTag: e9966a80-ea76-4a67-a794-6dd0874782cd
+
+	measure 'Assessment Rows' = COUNTROWS ( fact_assessment )
+		formatString: #,##0
+		displayFolder: QA
+		lineageTag: 0e86e9f1-1913-4571-be37-83c2d603ea32
+
+	measure 'Payment Rows' = COUNTROWS ( fact_payment )
+		formatString: #,##0
+		displayFolder: QA
+		lineageTag: a8673f34-6dfe-42e0-8733-6f89fedd6c93
+
+	measure 'Alert Rows' = COUNTROWS ( fact_alert )
+		formatString: #,##0
+		displayFolder: QA
+		lineageTag: f8a1cac5-d521-4c4e-95ba-f95e48c0e56b
+
+	column Hidden
+		dataType: int64
+		isHidden
+		lineageTag: 6cca3bd5-a39a-4945-be5e-541f0ed85cf8
+		summarizeBy: none
+		sourceColumn: Hidden
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW ( "Hidden", 1 )

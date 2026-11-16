@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+
+ref table dim_date
+ref table dim_child
+ref table dim_therapist
+ref table fact_session
+ref table fact_assessment
+ref table fact_assessment_domain
+ref table fact_alert
+ref table fact_payment
+ref table fact_goal
+ref table fact_home_engagement_weekly
+ref table fact_child_therapist
+ref table agg_child_summary
+ref table agg_monthly_center
+ref table dim_week
+ref table _Measures
+
+ref expression DataFolder

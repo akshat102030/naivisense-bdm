@@ -1,0 +1,65 @@
+table fact_goal
+	lineageTag: 6bff838f-d5a4-4716-96c2-5c0ea720018a
+
+	column goal_id
+		dataType: string
+		lineageTag: 9f4bd8a1-2b5e-41c6-aeb5-940b80a883ab
+		summarizeBy: none
+		sourceColumn: goal_id
+
+	column child_id
+		dataType: string
+		lineageTag: e8067fd4-7ba4-4fe3-9729-8b6587db0a70
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column title
+		dataType: string
+		lineageTag: 557a2c94-b1e7-4090-94f8-ff89791179f3
+		summarizeBy: none
+		sourceColumn: title
+
+	column status
+		dataType: string
+		lineageTag: 8fa5b86d-596e-493a-b752-cb3699e5c757
+		summarizeBy: none
+		sourceColumn: status
+
+	column priority
+		dataType: int64
+		lineageTag: 2d233cc6-45bc-41ba-9eb9-2422ee4e2ac7
+		summarizeBy: none
+		sourceColumn: priority
+
+	column created_date
+		dataType: dateTime
+		lineageTag: d21fa313-0b36-4b8c-998d-7c1ba3c766ac
+		summarizeBy: none
+		sourceColumn: created_date
+		formatString: yyyy-mm-dd
+
+	column target_date
+		dataType: dateTime
+		lineageTag: f7dd7c96-b90d-4d65-9bca-b4c70accc689
+		summarizeBy: none
+		sourceColumn: target_date
+		formatString: yyyy-mm-dd
+
+	column is_completed
+		dataType: int64
+		lineageTag: efc2ed0f-3432-4657-8b7f-ccc065821c47
+		summarizeBy: sum
+		sourceColumn: is_completed
+
+	partition fact_goal = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_goal.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"priority","created_date","target_date","is_completed"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"goal_id", type text},{"child_id", type text},{"title", type text},{"status", type text},{"priority", Int64.Type},{"created_date", type date},{"target_date", type date},{"is_completed", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,150 @@
+table fact_session
+	lineageTag: d15fc6b8-effa-4cb5-9186-3fd0ff3d2442
+
+	column session_id
+		dataType: string
+		lineageTag: bbaff690-bd20-47c4-a7fa-df4a86275c6d
+		summarizeBy: none
+		sourceColumn: session_id
+
+	column child_id
+		dataType: string
+		lineageTag: 23662821-434a-41ae-b7ef-5ee2931848e6
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column therapist_id
+		dataType: string
+		lineageTag: f8cbf2ea-a2a5-4135-bf62-5c069668c649
+		summarizeBy: none
+		sourceColumn: therapist_id
+
+	column date
+		dataType: dateTime
+		lineageTag: b08eabb6-f117-4e06-bb32-e57f1a242e63
+		summarizeBy: none
+		sourceColumn: date
+		formatString: yyyy-mm-dd
+
+	column month_start
+		dataType: dateTime
+		lineageTag: cb90d46f-b09f-4f51-af12-f648c9de39cb
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column week_start
+		dataType: dateTime
+		lineageTag: cc43ec4f-dca5-4031-bfd9-d69110b56cb4
+		summarizeBy: none
+		sourceColumn: week_start
+		formatString: yyyy-mm-dd
+
+	column start_hour
+		dataType: int64
+		lineageTag: b4f1bedc-f2bc-4338-b9d3-b27ddf4cf0eb
+		summarizeBy: sum
+		sourceColumn: start_hour
+
+	column therapy_type
+		dataType: string
+		lineageTag: 66708989-3d55-4f97-bdb4-1dcdc78ec4e3
+		summarizeBy: none
+		sourceColumn: therapy_type
+
+	column mode
+		dataType: string
+		lineageTag: 7c28fc91-347f-427b-b07f-8d097390a4d4
+		summarizeBy: none
+		sourceColumn: mode
+
+	column duration_min
+		dataType: int64
+		lineageTag: 449810a3-1263-45eb-b3f4-787897e833bc
+		summarizeBy: sum
+		sourceColumn: duration_min
+
+	column session_status
+		dataType: string
+		lineageTag: 67c3ed56-0236-4e10-a405-721dc4a2517e
+		summarizeBy: none
+		sourceColumn: session_status
+
+	column attendance_status
+		dataType: string
+		lineageTag: 5c6b319c-765a-4f9f-995a-f386b7c13ea0
+		summarizeBy: none
+		sourceColumn: attendance_status
+
+	column is_attended
+		dataType: int64
+		lineageTag: 682ab76a-3d17-49cf-b88c-28487399536b
+		summarizeBy: sum
+		sourceColumn: is_attended
+
+	column is_past
+		dataType: int64
+		lineageTag: 772ddb50-ce62-4d02-a518-fd116720d468
+		summarizeBy: sum
+		sourceColumn: is_past
+
+	column mood
+		dataType: string
+		lineageTag: 9e78eeaf-2fc5-41f8-b04a-92c4ac478d9f
+		summarizeBy: none
+		sourceColumn: mood
+
+	column attention_score
+		dataType: int64
+		lineageTag: fcc33413-0e1a-4325-adbc-d5354d932ada
+		summarizeBy: sum
+		sourceColumn: attention_score
+
+	column communication_score
+		dataType: int64
+		lineageTag: 9e991ae1-f554-491f-ba96-15fc6584aed5
+		summarizeBy: sum
+		sourceColumn: communication_score
+
+	column motor_score
+		dataType: int64
+		lineageTag: e23179b1-e621-4716-94b0-09974bf493a3
+		summarizeBy: sum
+		sourceColumn: motor_score
+
+	column behavior_score
+		dataType: int64
+		lineageTag: 9abb71a0-a9f0-42c4-ac80-e44b735c8335
+		summarizeBy: sum
+		sourceColumn: behavior_score
+
+	column avg_session_score
+		dataType: double
+		lineageTag: dadfe2a0-27b1-49ac-a959-b98266117e56
+		summarizeBy: sum
+		sourceColumn: avg_session_score
+
+	column tantrum_observed
+		dataType: int64
+		lineageTag: 9e157d38-0afa-446c-97c9-50d6cc942ee4
+		summarizeBy: sum
+		sourceColumn: tantrum_observed
+
+	column follow_up_required
+		dataType: int64
+		lineageTag: b53a4f3d-e510-4396-93f1-c9dffb4b38c8
+		summarizeBy: sum
+		sourceColumn: follow_up_required
+
+	partition fact_session = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_session.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"date","month_start","week_start","start_hour","duration_min","is_attended","is_past","attention_score","communication_score","motor_score","behavior_score","avg_session_score","tantrum_observed","follow_up_required"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"session_id", type text},{"child_id", type text},{"therapist_id", type text},{"date", type date},{"month_start", type date},{"week_start", type date},{"start_hour", Int64.Type},{"therapy_type", type text},{"mode", type text},{"duration_min", Int64.Type},{"session_status", type text},{"attendance_status", type text},{"is_attended", Int64.Type},{"is_past", Int64.Type},{"mood", type text},{"attention_score", Int64.Type},{"communication_score", Int64.Type},{"motor_score", Int64.Type},{"behavior_score", Int64.Type},{"avg_session_score", type number},{"tantrum_observed", Int64.Type},{"follow_up_required", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

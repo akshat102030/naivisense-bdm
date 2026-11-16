@@ -1,0 +1,77 @@
+table fact_assessment_domain
+	lineageTag: 1f65d58c-cd81-41cd-bacd-29bb9d31a4a6
+
+	column child_id
+		dataType: string
+		lineageTag: d110f441-1a3c-4a84-9de6-2588a8a382ad
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column assessment_date
+		dataType: dateTime
+		lineageTag: 563b3886-f58b-4d97-8be2-bc05e753b055
+		summarizeBy: none
+		sourceColumn: assessment_date
+		formatString: yyyy-mm-dd
+
+	column month_start
+		dataType: dateTime
+		lineageTag: 75cda038-f41f-4b46-bac6-7dcc1fff03e6
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column seq
+		dataType: int64
+		lineageTag: e552f982-e864-4d77-984e-25dc0cffd534
+		summarizeBy: none
+		sourceColumn: seq
+
+	column assessment_type
+		dataType: string
+		lineageTag: b05ebfcb-f754-4cde-95bb-1ffb5f9c7501
+		summarizeBy: none
+		sourceColumn: assessment_type
+
+	column domain
+		dataType: string
+		lineageTag: 7c665447-fb93-4c52-9037-092e0aea54da
+		summarizeBy: none
+		sourceColumn: domain
+
+	column domain_group
+		dataType: string
+		lineageTag: e104705d-4a3d-440d-93a0-a1aa0f89663d
+		summarizeBy: none
+		sourceColumn: domain_group
+
+	column score
+		dataType: double
+		lineageTag: c1cbba3d-e28b-4f10-b16a-578b254cbe85
+		summarizeBy: sum
+		sourceColumn: score
+
+	column is_initial
+		dataType: int64
+		lineageTag: 8980c9d4-380c-46fb-a939-bb5d555f54b1
+		summarizeBy: sum
+		sourceColumn: is_initial
+
+	column is_latest
+		dataType: int64
+		lineageTag: ebb03886-7c76-42de-990d-7ffd61c9620f
+		summarizeBy: sum
+		sourceColumn: is_latest
+
+	partition fact_assessment_domain = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_assessment_domain.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"assessment_date","month_start","seq","score","is_initial","is_latest"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"child_id", type text},{"assessment_date", type date},{"month_start", type date},{"seq", Int64.Type},{"assessment_type", type text},{"domain", type text},{"domain_group", type text},{"score", type number},{"is_initial", Int64.Type},{"is_latest", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,58 @@
+table fact_home_engagement_weekly
+	lineageTag: db57ecca-14fc-4e33-9167-80d92bcd3159
+
+	column child_id
+		dataType: string
+		lineageTag: 7b546fb1-f4ea-4bfd-b2a6-f302d2223cf8
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column week_start
+		dataType: dateTime
+		lineageTag: 89462023-c839-48c5-a168-4ef6b420b0d3
+		summarizeBy: none
+		sourceColumn: week_start
+		formatString: yyyy-mm-dd
+
+	column meals_logged
+		dataType: int64
+		lineageTag: bc2972d2-b73e-4315-84db-2f2f5950352a
+		summarizeBy: sum
+		sourceColumn: meals_logged
+
+	column home_tasks_logged
+		dataType: int64
+		lineageTag: bf46fea7-c153-4566-aa92-c3edfe1966ee
+		summarizeBy: sum
+		sourceColumn: home_tasks_logged
+
+	column home_tasks_approved
+		dataType: int64
+		lineageTag: 7bb8d0b3-7d24-4139-81c1-e8d479e8ce01
+		summarizeBy: sum
+		sourceColumn: home_tasks_approved
+
+	column sessions_scheduled
+		dataType: int64
+		lineageTag: ea88dd5d-292d-4cbe-8b49-44c531da9bb6
+		summarizeBy: sum
+		sourceColumn: sessions_scheduled
+
+	column sessions_attended
+		dataType: int64
+		lineageTag: 99bce83b-c22b-4b66-8a9e-75a10eb022fe
+		summarizeBy: sum
+		sourceColumn: sessions_attended
+
+	partition fact_home_engagement_weekly = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_home_engagement_weekly.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"week_start","meals_logged","home_tasks_logged","home_tasks_approved","sessions_scheduled","sessions_attended"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"child_id", type text},{"week_start", type date},{"meals_logged", Int64.Type},{"home_tasks_logged", Int64.Type},{"home_tasks_approved", Int64.Type},{"sessions_scheduled", Int64.Type},{"sessions_attended", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

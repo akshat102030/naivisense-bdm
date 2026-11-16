@@ -1,0 +1,215 @@
+table agg_child_summary
+	lineageTag: 98022143-5c9a-49c5-8393-567130afc534
+
+	column child_id
+		dataType: string
+		lineageTag: 5616e08c-8359-4387-9b5c-f08a9be09e60
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column child_code
+		dataType: string
+		lineageTag: b6b1eacd-c0d6-4f0b-acf3-265dd55e1ee6
+		summarizeBy: none
+		sourceColumn: child_code
+
+	column sessions_past
+		dataType: int64
+		lineageTag: ba7f3fba-7796-463f-8cd9-a48d03aa7134
+		summarizeBy: sum
+		sourceColumn: sessions_past
+
+	column sessions_attended
+		dataType: int64
+		lineageTag: 337014bc-9cbf-4862-b9e5-01a9b39c8cd9
+		summarizeBy: sum
+		sourceColumn: sessions_attended
+
+	column attendance_rate
+		dataType: double
+		lineageTag: 60a1bc2b-075c-4be2-86aa-3beb5957bca2
+		summarizeBy: sum
+		sourceColumn: attendance_rate
+
+	column avg_session_score
+		dataType: double
+		lineageTag: da821ef6-8db3-4984-b1b9-46327586e227
+		summarizeBy: sum
+		sourceColumn: avg_session_score
+
+	column session_score_first_half
+		dataType: double
+		lineageTag: ca8466f6-b9a7-4377-9d44-da3ea9faf46b
+		summarizeBy: sum
+		sourceColumn: session_score_first_half
+
+	column session_score_second_half
+		dataType: double
+		lineageTag: b112dcde-a48d-4ec5-9c5d-4da45786b9ed
+		summarizeBy: sum
+		sourceColumn: session_score_second_half
+
+	column initial_overall_score
+		dataType: double
+		lineageTag: a574e97f-03ed-4828-83e5-cfdc17843156
+		summarizeBy: sum
+		sourceColumn: initial_overall_score
+
+	column latest_overall_score
+		dataType: double
+		lineageTag: cb8c10fd-2a8d-4baa-b7bc-97a976aa20cd
+		summarizeBy: sum
+		sourceColumn: latest_overall_score
+
+	column improvement_pts
+		dataType: double
+		lineageTag: 3cff9156-44f7-4610-a4f0-e28c3e456607
+		summarizeBy: sum
+		sourceColumn: improvement_pts
+
+	column improvement_pct
+		dataType: double
+		lineageTag: ca432ef3-38b1-4e67-a355-e3559574ab74
+		summarizeBy: sum
+		sourceColumn: improvement_pct
+
+	column months_tracked
+		dataType: int64
+		lineageTag: bbbb4b0e-7202-4ed1-9c5d-956f0f3a601b
+		summarizeBy: sum
+		sourceColumn: months_tracked
+
+	column initial_risk
+		dataType: string
+		lineageTag: afb6303e-938e-4fee-8019-07fd3b71494d
+		summarizeBy: none
+		sourceColumn: initial_risk
+
+	column latest_risk
+		dataType: string
+		lineageTag: a42ede9f-31c2-4879-9881-3bbbffb83d0a
+		summarizeBy: none
+		sourceColumn: latest_risk
+
+	column risk_improved
+		dataType: int64
+		lineageTag: f1c15145-0f44-4bec-8d95-44f6ed86f9ed
+		summarizeBy: sum
+		sourceColumn: risk_improved
+
+	column alerts_total
+		dataType: int64
+		lineageTag: c2803920-a76a-4a89-b694-98a56ccdf1b8
+		summarizeBy: sum
+		sourceColumn: alerts_total
+
+	column alerts_open
+		dataType: int64
+		lineageTag: 21edb855-84ac-40bb-88b3-99b2079a96ee
+		summarizeBy: sum
+		sourceColumn: alerts_open
+
+	column high_severity_alerts
+		dataType: int64
+		lineageTag: 0eb91beb-9eee-4c64-b371-fe14588f4821
+		summarizeBy: sum
+		sourceColumn: high_severity_alerts
+
+	column billed_inr
+		dataType: int64
+		lineageTag: e38b34ed-d68c-4a84-878c-9ebf3576b3dd
+		summarizeBy: sum
+		sourceColumn: billed_inr
+
+	column collected_inr
+		dataType: int64
+		lineageTag: 76d9621e-49fa-470b-8a6f-1f2764968cd1
+		summarizeBy: sum
+		sourceColumn: collected_inr
+
+	column outstanding_inr
+		dataType: int64
+		lineageTag: b578a1f9-ea3f-43d2-8129-4fb64a026a9d
+		summarizeBy: sum
+		sourceColumn: outstanding_inr
+
+	column home_tasks_per_week
+		dataType: double
+		lineageTag: fc7803c2-cf65-4ccc-8250-14d0f16f4664
+		summarizeBy: sum
+		sourceColumn: home_tasks_per_week
+
+	column meals_logged_per_week
+		dataType: double
+		lineageTag: d64ab80f-dd32-48a8-ab07-5247b5e37979
+		summarizeBy: sum
+		sourceColumn: meals_logged_per_week
+
+	column goals_total
+		dataType: int64
+		lineageTag: 6d4c25b4-4cc5-4beb-85ac-70db6c85a26a
+		summarizeBy: sum
+		sourceColumn: goals_total
+
+	column goals_completed
+		dataType: int64
+		lineageTag: 8bc77cae-5435-4990-ac50-9b8a0673ca4e
+		summarizeBy: sum
+		sourceColumn: goals_completed
+
+	column engagement_segment
+		dataType: string
+		lineageTag: 2d541ebd-5fe7-4b69-8e4c-d9deee7c8bc8
+		summarizeBy: none
+		sourceColumn: engagement_segment
+
+	column churn_risk
+		dataType: int64
+		lineageTag: f142627f-b50f-475e-b7be-bf572f30ea69
+		summarizeBy: sum
+		sourceColumn: churn_risk
+
+	column subscription_invoices
+		dataType: int64
+		lineageTag: 00ceb113-e75c-4924-bf5a-f513ca2d3e1c
+		summarizeBy: sum
+		sourceColumn: subscription_invoices
+
+	column monthly_fee_inr
+		dataType: int64
+		lineageTag: 405b3a24-6be1-4975-8d75-1f338a88f61c
+		summarizeBy: sum
+		sourceColumn: monthly_fee_inr
+
+	column progress_points
+		dataType: double
+		lineageTag: 72cfca34-c9d5-4c44-8a99-d4773957d338
+		summarizeBy: sum
+		sourceColumn: progress_points
+
+	column 'Value Group' =
+			VAR HiFee = agg_child_summary[billed_inr] >= MEDIAN ( agg_child_summary[billed_inr] )
+			VAR HiPP  = agg_child_summary[progress_points] >= MEDIAN ( agg_child_summary[progress_points] )
+			RETURN SWITCH ( TRUE (), HiFee && HiPP, "Thriving", NOT HiFee && HiPP, "Efficient", HiFee && NOT HiPP, "Under-served", "At-risk" )
+		dataType: string
+		lineageTag: 100568e2-23d5-4c87-9297-080800a0502f
+		summarizeBy: none
+
+	column 'Fee Tier' =
+			SWITCH ( TRUE (), agg_child_summary[monthly_fee_inr] < 12000, "1 Under 12k", agg_child_summary[monthly_fee_inr] < 15000, "2 12k-15k", "3 15k and above" )
+		dataType: string
+		lineageTag: 99f9b049-3bc9-41c6-98e2-0ef4228c0f1b
+		summarizeBy: none
+
+	partition agg_child_summary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\agg_child_summary.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"sessions_past","sessions_attended","attendance_rate","avg_session_score","session_score_first_half","session_score_second_half","initial_overall_score","latest_overall_score","improvement_pts","improvement_pct","months_tracked","risk_improved","alerts_total","alerts_open","high_severity_alerts","billed_inr","collected_inr","outstanding_inr","home_tasks_per_week","meals_logged_per_week","goals_total","goals_completed","churn_risk","subscription_invoices","monthly_fee_inr","progress_points"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"child_id", type text},{"child_code", type text},{"sessions_past", Int64.Type},{"sessions_attended", Int64.Type},{"attendance_rate", type number},{"avg_session_score", type number},{"session_score_first_half", type number},{"session_score_second_half", type number},{"initial_overall_score", type number},{"latest_overall_score", type number},{"improvement_pts", type number},{"improvement_pct", type number},{"months_tracked", Int64.Type},{"initial_risk", type text},{"latest_risk", type text},{"risk_improved", Int64.Type},{"alerts_total", Int64.Type},{"alerts_open", Int64.Type},{"high_severity_alerts", Int64.Type},{"billed_inr", Int64.Type},{"collected_inr", Int64.Type},{"outstanding_inr", Int64.Type},{"home_tasks_per_week", type number},{"meals_logged_per_week", type number},{"goals_total", Int64.Type},{"goals_completed", Int64.Type},{"engagement_segment", type text},{"churn_risk", Int64.Type},{"subscription_invoices", Int64.Type},{"monthly_fee_inr", Int64.Type},{"progress_points", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

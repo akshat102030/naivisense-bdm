@@ -1,0 +1,83 @@
+table fact_payment
+	lineageTag: 659e5885-b938-465e-8d5c-95f555112be4
+
+	column payment_id
+		dataType: string
+		lineageTag: d102e26f-3418-4e77-b19b-805f21ec5193
+		summarizeBy: none
+		sourceColumn: payment_id
+
+	column child_id
+		dataType: string
+		lineageTag: 50ba3b39-ed7b-4721-b982-c8722347369c
+		summarizeBy: none
+		sourceColumn: child_id
+
+	column parent_user_id
+		dataType: string
+		lineageTag: 4d0645c6-4626-45f3-b3e1-977e323026d6
+		summarizeBy: none
+		sourceColumn: parent_user_id
+
+	column billing_date
+		dataType: dateTime
+		lineageTag: 2bb723ad-7542-4b91-a0df-15ebc137a911
+		summarizeBy: none
+		sourceColumn: billing_date
+		formatString: yyyy-mm-dd
+
+	column month_start
+		dataType: dateTime
+		lineageTag: 49f8c1d8-efce-40c3-9a58-fd4ccb97864b
+		summarizeBy: none
+		sourceColumn: month_start
+		formatString: yyyy-mm-dd
+
+	column payment_type
+		dataType: string
+		lineageTag: 35928887-1c8d-40ae-b354-52d790074828
+		summarizeBy: none
+		sourceColumn: payment_type
+
+	column status
+		dataType: string
+		lineageTag: 615c1426-9b66-4350-bc01-6f61f81d5220
+		summarizeBy: none
+		sourceColumn: status
+
+	column amount_inr
+		dataType: int64
+		lineageTag: 5397ba97-a357-44e3-8a06-e9602e32c6f3
+		summarizeBy: sum
+		sourceColumn: amount_inr
+
+	column paid_amount_inr
+		dataType: int64
+		lineageTag: 59b9a876-f954-495e-a13f-2da75bdd036a
+		summarizeBy: sum
+		sourceColumn: paid_amount_inr
+
+	column outstanding_inr
+		dataType: int64
+		lineageTag: 9e9c0dc3-4501-4f85-b1be-0251e48cf47c
+		summarizeBy: sum
+		sourceColumn: outstanding_inr
+
+	column days_to_pay
+		dataType: int64
+		lineageTag: 726efada-7595-401d-88b3-3501c2b06629
+		summarizeBy: sum
+		sourceColumn: days_to_pay
+
+	partition fact_payment = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\fact_payment.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"billing_date","month_start","amount_inr","paid_amount_inr","outstanding_inr","days_to_pay"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"payment_id", type text},{"child_id", type text},{"parent_user_id", type text},{"billing_date", type date},{"month_start", type date},{"payment_type", type text},{"status", type text},{"amount_inr", Int64.Type},{"paid_amount_inr", Int64.Type},{"outstanding_inr", Int64.Type},{"days_to_pay", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

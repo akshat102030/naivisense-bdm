@@ -1,0 +1,39 @@
+table dim_therapist
+	lineageTag: 8f6ba886-b34b-49e7-97d7-fd703b0baf77
+
+	column therapist_id
+		dataType: string
+		lineageTag: 2050a4ae-f024-4aa2-a2d2-bbfbb586963d
+		summarizeBy: none
+		sourceColumn: therapist_id
+
+	column therapist_name
+		dataType: string
+		lineageTag: 6569be76-1f57-4f56-9056-41da0fb8b7fc
+		summarizeBy: none
+		sourceColumn: therapist_name
+
+	column specialty
+		dataType: string
+		lineageTag: e28c7fcf-9461-49d3-bca9-1615bb3cd4ec
+		summarizeBy: none
+		sourceColumn: specialty
+
+	column caseload_children
+		dataType: int64
+		lineageTag: 13e43a34-fdfd-4384-bc5b-a1e40f062adf
+		summarizeBy: sum
+		sourceColumn: caseload_children
+
+	partition dim_therapist = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "\processed\dim_therapist.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Cleaned = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"caseload_children"}),
+				    Typed = Table.TransformColumnTypes(Cleaned, {{"therapist_id", type text},{"therapist_name", type text},{"specialty", type text},{"caseload_children", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
