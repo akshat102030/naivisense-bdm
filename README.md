@@ -1,6 +1,6 @@
 # NaiviSense Outcome Value: which therapy spend earned its price?
 
-**Live dashboard: [https://naivisense-bdm.netlify.app](https://naivisense-bdm.netlify.app)**
+**Live dashboard: [https://naivisense-bdm.netlify.app](https://naivisense-bdm.netlify.app)** · [Slides (PDF)](https://naivisense-bdm.netlify.app/downloads/NaiviSense_Outcome_Value_Slides.pdf)
 
 A BDM (Business Data Management) analytics project built on the NaiviSense therapy-centre data model. It scores every child on one **Progress Points** scale and compares each child's share of centre progress with their share of centre fees: the **Outcome Value Index** (1.00 = fair value).
 
@@ -45,7 +45,7 @@ naivisense-bdm/
 │   └── processed/       13 star-schema tables (CSV); also written to MongoDB as proc_*
 ├── 02_PowerBI/          Power BI Project (.pbip): TMDL model, 53 DAX measures, 11-page report, DAX_Measures.md
 ├── 03_Report/           Written BDM report (.docx) and its figures
-├── 04_Presentation/     Timed 10-minute presentation script (PDF + Markdown)
+├── 04_Presentation/     Slide deck (11 slides, PDF) and timed 10-minute presentation script (PDF + Markdown)
 ├── 06_Code/             Python scripts: analysis (independent recomputation), PBIP / figure / report / script / dashboard-data generators
 ├── generator/           TypeScript synthetic-data generator and raw → processed transformation (MongoDB models)
 └── docs/screenshots/    Images used in this README
@@ -74,7 +74,8 @@ The dashboard is a static site (`web/dist`), so any static host works. It is liv
 ```bash
 npx netlify-cli login
 cd web && npm ci && npm run build
-npx netlify-cli deploy --prod --dir=dist --site naivisense-bdm
+npx netlify-cli link                       # once: pick the site (or `netlify sites:create`)
+npx netlify-cli deploy --prod --dir=dist
 ```
 
 Or connect this GitHub repo in Netlify (*Add new site → Import an existing project*); the settings are detected from `netlify.toml`.
@@ -95,6 +96,7 @@ python3 analysis.py            # recomputes every number -> results.json
 python3 export_dashboard.py    # -> ../web/src/data/dashboard.json
 python3 build_pbip.py          # -> ../02_PowerBI
 python3 make_figures.py && python3 make_report.py && python3 make_script.py   # need matplotlib + python-docx
+python3 make_slides.py         # slide deck PDF (needs Google Chrome; set CHROME=… to override the path)
 ```
 
 The generator is deterministic (values and ObjectIds): two runs produce identical files. The seeder only deletes documents tagged `synthetic: true` and refuses to write to a database named `naivisense` unless `--allow-app-db` is passed.

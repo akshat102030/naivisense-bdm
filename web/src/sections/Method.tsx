@@ -3,6 +3,11 @@ import { data } from '../data';
 
 const DOWNLOADS = [
   {
+    href: '/downloads/NaiviSense_Outcome_Value_Slides.pdf',
+    title: 'Presentation slides (PDF)',
+    note: '11 slides, 16:9',
+  },
+  {
     href: '/downloads/naivisense-bdm-processed-data.zip',
     title: 'Processed data (CSV)',
     note: '13 star-schema tables, child codes only',
