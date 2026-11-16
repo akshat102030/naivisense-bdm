@@ -31,7 +31,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "50 children · 8 therapists · May–Nov 2026 · synthetic data from the NaiviSense MongoDB model",
+                    "value": "50 children · 8 therapists · May–Nov 2026 · sample data prepared for Naivedyam Child Development Center",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "9pt",
@@ -78,7 +78,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Which therapy rupees actually moved a child forward? 50 children · 8 therapists · May–Nov 2026 · synthetic data from the NaiviSense MongoDB model'"
+                  "Value": "'Which therapy rupees actually moved a child forward? 50 children · 8 therapists · May–Nov 2026 · sample data prepared for Naivedyam Child Development Center'"
                 }
               }
             }

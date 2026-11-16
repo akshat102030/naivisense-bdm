@@ -1,5 +1,5 @@
 /**
- * Synthetic data seeder + analytics exporter.
+ * Sample-data seeder + analytics exporter.
  *
  *   npm run seed                           # generate + CSV export only (no DB writes)
  *   npm run seed:write                     # also write to MongoDB (DB: naivisense_synthetic)

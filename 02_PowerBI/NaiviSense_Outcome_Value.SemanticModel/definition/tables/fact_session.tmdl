@@ -1,138 +1,138 @@
 table fact_session
-	lineageTag: d15fc6b8-effa-4cb5-9186-3fd0ff3d2442
+	lineageTag: efd1f76c-f4de-4cf5-875f-d4d538f13c71
 
 	column session_id
 		dataType: string
-		lineageTag: bbaff690-bd20-47c4-a7fa-df4a86275c6d
+		lineageTag: 2a4e8e4d-354c-46c6-8af7-933309f8f6ad
 		summarizeBy: none
 		sourceColumn: session_id
 
 	column child_id
 		dataType: string
-		lineageTag: 23662821-434a-41ae-b7ef-5ee2931848e6
+		lineageTag: 3be27452-0dd0-45b2-a86e-006a7a841df3
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column therapist_id
 		dataType: string
-		lineageTag: f8cbf2ea-a2a5-4135-bf62-5c069668c649
+		lineageTag: d9003b59-173c-44c2-afbf-d8a59d229ea6
 		summarizeBy: none
 		sourceColumn: therapist_id
 
 	column date
 		dataType: dateTime
-		lineageTag: b08eabb6-f117-4e06-bb32-e57f1a242e63
+		lineageTag: 956ec277-1dad-4c06-82dd-9f423e30abae
 		summarizeBy: none
 		sourceColumn: date
 		formatString: yyyy-mm-dd
 
 	column month_start
 		dataType: dateTime
-		lineageTag: cb90d46f-b09f-4f51-af12-f648c9de39cb
+		lineageTag: 9ad1a0cc-fdc0-4ee5-bfd1-79c45a70f8df
 		summarizeBy: none
 		sourceColumn: month_start
 		formatString: yyyy-mm-dd
 
 	column week_start
 		dataType: dateTime
-		lineageTag: cc43ec4f-dca5-4031-bfd9-d69110b56cb4
+		lineageTag: 2f1d4f73-9be3-403c-8584-127b1a3a5dc8
 		summarizeBy: none
 		sourceColumn: week_start
 		formatString: yyyy-mm-dd
 
 	column start_hour
 		dataType: int64
-		lineageTag: b4f1bedc-f2bc-4338-b9d3-b27ddf4cf0eb
+		lineageTag: 84767531-f2cd-4bb9-a25e-f9e76d31d109
 		summarizeBy: sum
 		sourceColumn: start_hour
 
 	column therapy_type
 		dataType: string
-		lineageTag: 66708989-3d55-4f97-bdb4-1dcdc78ec4e3
+		lineageTag: fc2fc84c-d5bf-4c9d-a23a-eba02d8f1aa0
 		summarizeBy: none
 		sourceColumn: therapy_type
 
 	column mode
 		dataType: string
-		lineageTag: 7c28fc91-347f-427b-b07f-8d097390a4d4
+		lineageTag: 8fcb9db1-1f4c-4ce6-ad71-fdcf68540566
 		summarizeBy: none
 		sourceColumn: mode
 
 	column duration_min
 		dataType: int64
-		lineageTag: 449810a3-1263-45eb-b3f4-787897e833bc
+		lineageTag: 444a81d4-faac-440f-a360-ea85c6942869
 		summarizeBy: sum
 		sourceColumn: duration_min
 
 	column session_status
 		dataType: string
-		lineageTag: 67c3ed56-0236-4e10-a405-721dc4a2517e
+		lineageTag: af024dac-5666-413c-a0f7-53ceb6a54908
 		summarizeBy: none
 		sourceColumn: session_status
 
 	column attendance_status
 		dataType: string
-		lineageTag: 5c6b319c-765a-4f9f-995a-f386b7c13ea0
+		lineageTag: 9591c37b-5f16-41cc-8842-2d2d2157b078
 		summarizeBy: none
 		sourceColumn: attendance_status
 
 	column is_attended
 		dataType: int64
-		lineageTag: 682ab76a-3d17-49cf-b88c-28487399536b
+		lineageTag: 036ed84f-30fe-46a3-8e40-5adc50fcdc67
 		summarizeBy: sum
 		sourceColumn: is_attended
 
 	column is_past
 		dataType: int64
-		lineageTag: 772ddb50-ce62-4d02-a518-fd116720d468
+		lineageTag: d3a8daa0-d6c5-4b62-ab69-f82050ddd628
 		summarizeBy: sum
 		sourceColumn: is_past
 
 	column mood
 		dataType: string
-		lineageTag: 9e78eeaf-2fc5-41f8-b04a-92c4ac478d9f
+		lineageTag: 1d9c8345-2c78-4da4-89a9-75058444ca31
 		summarizeBy: none
 		sourceColumn: mood
 
 	column attention_score
 		dataType: int64
-		lineageTag: fcc33413-0e1a-4325-adbc-d5354d932ada
+		lineageTag: 4f6b2cd0-d20e-40cc-bcca-6370c2341413
 		summarizeBy: sum
 		sourceColumn: attention_score
 
 	column communication_score
 		dataType: int64
-		lineageTag: 9e991ae1-f554-491f-ba96-15fc6584aed5
+		lineageTag: fb8321d1-c194-48ae-a8ab-73fde88f71e2
 		summarizeBy: sum
 		sourceColumn: communication_score
 
 	column motor_score
 		dataType: int64
-		lineageTag: e23179b1-e621-4716-94b0-09974bf493a3
+		lineageTag: b4fd712a-53df-4e4e-a9e3-cad9e6b7b8a5
 		summarizeBy: sum
 		sourceColumn: motor_score
 
 	column behavior_score
 		dataType: int64
-		lineageTag: 9abb71a0-a9f0-42c4-ac80-e44b735c8335
+		lineageTag: 94e72175-c388-4bc2-beb4-4c10d2f041ca
 		summarizeBy: sum
 		sourceColumn: behavior_score
 
 	column avg_session_score
 		dataType: double
-		lineageTag: dadfe2a0-27b1-49ac-a959-b98266117e56
+		lineageTag: 14a74435-0d72-44cb-84c0-1196d0aaba2a
 		summarizeBy: sum
 		sourceColumn: avg_session_score
 
 	column tantrum_observed
 		dataType: int64
-		lineageTag: 9e157d38-0afa-446c-97c9-50d6cc942ee4
+		lineageTag: 9b16e0c9-994b-403a-9d91-71250e962d3d
 		summarizeBy: sum
 		sourceColumn: tantrum_observed
 
 	column follow_up_required
 		dataType: int64
-		lineageTag: b53a4f3d-e510-4396-93f1-c9dffb4b38c8
+		lineageTag: 788c47fa-c38e-40bc-bf46-3c310fcd1b42
 		summarizeBy: sum
 		sourceColumn: follow_up_required
 

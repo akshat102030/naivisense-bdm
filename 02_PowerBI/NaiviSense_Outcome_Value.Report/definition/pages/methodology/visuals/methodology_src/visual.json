@@ -43,7 +43,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "All records are synthetic (50 children, 8 therapists, 4 May – 15 Nov 2026, deterministic seed) and carry synthetic = true.",
+                    "value": "All records are sample data prepared for Naivedyam Child Development Center (50 children, 8 therapists, 4 May – 15 Nov 2026). Real, anonymised records will replace them.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -55,7 +55,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Raw layer: 01_Data/raw. Processed star schema: 01_Data/processed, rebuilt by backend/scripts/seed-synthetic.ts.",
+                    "value": "Raw layer: 01_Data/raw. Processed star schema: 01_Data/processed, rebuilt by the scripts in the generator folder.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -79,7 +79,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Limitations: synthetic relationships are designed, not discovered; Progress Points weights are a modelling choice; therapist attribution is proportional to sessions, not causal.",
+                    "value": "Limitations: relationships in the sample data are designed, not discovered; Progress Points weights are a modelling choice; therapist attribution is proportional to sessions, not causal.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -174,7 +174,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Data and limits Source: NaiviSense MongoDB collections (users, children, sessions, attendances, assessments, alerts, payments, goals, meal and home-task logs). All records are synthetic (50 children, '"
+                  "Value": "'Data and limits Source: NaiviSense MongoDB collections (users, children, sessions, attendances, assessments, alerts, payments, goals, meal and home-task logs). All records are sample data prepared for'"
                 }
               }
             }

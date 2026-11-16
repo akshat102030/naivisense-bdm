@@ -1,5 +1,5 @@
 /**
- * Deterministic synthetic data generator for NaiviSense analytics.
+ * Deterministic sample-data generator for NaiviSense analytics.
  * Pure (no I/O): returns RAW collections shaped like the app's Mongo models,
  * plus an `assessment_history` collection (monthly snapshots) the app model
  * does not keep. Latent traits (responsiveness, parent involvement) drive
@@ -88,7 +88,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
     });
     return _id;
   };
-  const centerId = mkUser('Arjun Sharma (Synthetic)', 'center_head', 'center@synthetic.naivisense.test');
+  const centerId = mkUser('Arjun Sharma', 'center_head', 'center@example.test');
   const therapistNames: Record<TherapyType, string[]> = {
     speech: ['Priya Mehta', 'Kavya Iyer'],
     ot: ['Rohan Verma', 'Neha Bansal'],
@@ -125,7 +125,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
     sleep_issue: 'health', injury: 'health', emotional_stress: 'tantrum', other: 'other',
   };
   const activitiesPool = ['Picture cards', 'Play-dough', 'Sensory bin', 'Story reading', 'Puzzle', 'Peg board', 'Swing', 'Role play', 'Bubble blowing', 'Matching game'];
-  const centerLocation = { lat: 26.2183, lng: 78.1828, address: 'NaiviSense Center, Gwalior (synthetic)' };
+  const centerLocation = { lat: 26.2183, lng: 78.1828, address: 'NaiviSense Center, Gwalior (sample)' };
 
   // ---- children ----------------------------------------------------------
   const weekStarts: Date[] = [];
@@ -155,7 +155,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
     const effectiveStart = enrolled < DATA_START ? DATA_START : enrolled;
 
     // Parent
-    const parentUserId = mkUser(`${pick(parentFirst)} ${lastName}`, 'parent', `parent${i + 1}@synthetic.naivisense.test`);
+    const parentUserId = mkUser(`${pick(parentFirst)} ${lastName}`, 'parent', `parent${i + 1}@example.test`);
     const childId = oid();
 
     // Therapy plan: 1-3 types, each with a specific therapist and 2 weekdays.
@@ -197,7 +197,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
         parent_involvement: involvement,
       },
       goals: { priorities: plan.map((p) => p.type), timeline_months: pick([6, 9, 12]) },
-      parent_email: `parent${i + 1}@synthetic.naivisense.test`,
+      parent_email: `parent${i + 1}@example.test`,
       consent_record: { given_at: enrolled, given_by: 'parent' },
       functional_baseline: {
         communication_level: baselineComm,
@@ -246,7 +246,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
         date, assessed_by: pick(plan).th.id, is_complete: true, domain_data: {},
         domain_scores, overall_score_pct: overall, risk_level,
         developmental_quotient: Math.round(clamp(overall * 0.95 + between(-3, 3), 10, 120)),
-        general_notes: `Synthetic ${idx === 0 ? 'initial' : 'follow-up'} assessment`,
+        general_notes: `Sample ${idx === 0 ? 'initial' : 'follow-up'} assessment`,
       };
     });
     out.assessments.push({
@@ -275,7 +275,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
             _id: sid, child_id: childId, therapist_id: p.th.id, scheduled_at: at, end_at: end,
             type: p.type, mode, duration_min: 45,
             offline_location: mode === 'offline' ? centerLocation.address : undefined,
-            meeting_link: mode === 'online' ? `https://meet.synthetic.test/${sid.toString().slice(-8)}` : undefined,
+            meeting_link: mode === 'online' ? `https://meet.example.test/${sid.toString().slice(-8)}` : undefined,
             created_at: addDays(at, -7), updated_at: end, ...tag,
           };
           if (isFuture) {
@@ -363,7 +363,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
       const raisedByParent = chance(0.65);
       out.alerts.push({
         _id: oid(), child_id: childId, raised_by: raisedByParent ? parentUserId : pick(plan).th.id, type,
-        description: `Synthetic ${type.replace('_', ' ')} alert`, severity: sev, priority: sev === 'high' ? 'high' : 'normal',
+        description: `Sample ${type.replace('_', ' ')} alert`, severity: sev, priority: sev === 'high' ? 'high' : 'normal',
         category: alertCategory[type], source: raisedByParent ? 'parent' : 'therapist', status,
         resolved_by: status === 'resolved' ? pick(plan).th.id : undefined, resolution_note: status === 'resolved' ? 'Addressed with parent guidance' : undefined,
         acknowledged_at: status === 'open' ? null : ack, resolved_at: res, created_at: when, ...tag,
@@ -377,7 +377,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
       out.concerns.push({
         _id: oid(), child_id: childId, created_by: parentUserId, created_by_role: 'parent',
         category: pick(['tantrum', 'behavior', 'health', 'regression', 'activity', 'other']),
-        description: 'Synthetic parent concern', status: resolved ? 'resolved' : 'open',
+        description: 'Sample parent concern', status: resolved ? 'resolved' : 'open',
         resolved_by: resolved ? pick(plan).th.id : undefined, resolution: resolved ? 'Discussed in session' : undefined,
         resolved_at: resolved ? addDays(when, int(1, 7)) : undefined, created_at: when, updated_at: when, ...tag,
       });
@@ -415,7 +415,7 @@ export function generate(passwordHash: string, studentCount = 50): RawData {
         if (at > DATA_END) continue;
         out.home_task_logs.push({
           _id: oid(), home_plan_id: homePlanId, task_id: `task_${int(1, 6)}`, child_id: childId, logged_by: parentUserId, logged_at: at,
-          image_url: 'https://synthetic.test/img.jpg', status: weighted(['approved', 'pending', 'rejected'] as const, [75, 15, 10]),
+          image_url: 'https://example.test/img.jpg', status: weighted(['approved', 'pending', 'rejected'] as const, [75, 15, 10]),
           verification_id: null, created_at: at, updated_at: at, ...tag,
         });
       }

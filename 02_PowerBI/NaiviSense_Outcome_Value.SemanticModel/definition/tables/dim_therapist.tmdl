@@ -1,27 +1,27 @@
 table dim_therapist
-	lineageTag: 8f6ba886-b34b-49e7-97d7-fd703b0baf77
+	lineageTag: 47b956b7-a61c-4bdc-b466-deb67a6b1320
 
 	column therapist_id
 		dataType: string
-		lineageTag: 2050a4ae-f024-4aa2-a2d2-bbfbb586963d
+		lineageTag: 21f4b5bd-0369-49f6-91d0-4db5939d05e8
 		summarizeBy: none
 		sourceColumn: therapist_id
 
 	column therapist_name
 		dataType: string
-		lineageTag: 6569be76-1f57-4f56-9056-41da0fb8b7fc
+		lineageTag: 51e27103-6724-4d3f-b956-75544f74886b
 		summarizeBy: none
 		sourceColumn: therapist_name
 
 	column specialty
 		dataType: string
-		lineageTag: e28c7fcf-9461-49d3-bca9-1615bb3cd4ec
+		lineageTag: 49fc179c-e117-4643-80af-b840ea635cfe
 		summarizeBy: none
 		sourceColumn: specialty
 
 	column caseload_children
 		dataType: int64
-		lineageTag: 13e43a34-fdfd-4384-bc5b-a1e40f062adf
+		lineageTag: 06096b11-4c98-4b14-8035-3376db223376
 		summarizeBy: sum
 		sourceColumn: caseload_children
 

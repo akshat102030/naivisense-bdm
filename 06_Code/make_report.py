@@ -78,14 +78,14 @@ page_break()
 tf = R['vi_by_involvement']
 doc.add_heading('Abstract', 1)
 para(f'Therapy centres bill families monthly, but a fee says little about how much a child actually progressed. This project asks which therapy spend earned its price. '
-     f'Using the NaiviSense data model (children, sessions, attendance, assessments, alerts, payments, goals and home-engagement logs) we generated a synthetic centre of '
+     f'Using the NaiviSense data model (children, sessions, attendance, assessments, alerts, payments, goals and home-engagement logs) we prepared a sample dataset for a centre of '
      f'{R["students"]} children and {R["therapists"]} therapists covering May–November 2026 ({R["sessions_past"]:,} past sessions, {inr(R["billed_inr"])} of subscription fees), '
      f'stored it in MongoDB as a raw layer and a processed star schema, scored every child on one Progress Points scale, and built an Outcome Value Index: a child\'s share of centre progress divided by their share of centre fees.')
 para(f'The analysis is delivered as a Power BI project and written up here. The findings: parent involvement moves value far more than fee level (value index {tf["high"]["value_index"]:.2f} for high-involvement families against {tf["low"]["value_index"]:.2f} for low); '
      f'attendance tracks improvement (r = {R["corr_attendance_vs_improvement"]:+.2f}); {R["quadrants"]["Under-served"]} children pay above-median fees for below-median progress; '
      f'high-severity alerts are acknowledged in {R["alert_sla"]["high"]["avg_hrs_ack"]} hours but routine ones wait about {R["alert_sla"]["medium"]["avg_hrs_ack"]} hours.')
-para('All data are synthetic and the relationships in them were designed, so the findings demonstrate the method rather than describe a real centre.', italic=True)
-para('Keywords: therapy outcomes, value index, Power BI, DAX, MongoDB, star schema, synthetic data', italic=True)
+para('The figures are sample data prepared for Naivedyam Child Development Center; the relationships in them were designed, so the findings demonstrate the method. Real, anonymised records will replace them.', italic=True)
+para('Keywords: therapy outcomes, value index, Power BI, DAX, MongoDB, star schema, sample data', italic=True)
 doc.add_heading('Table of Contents', 1)
 for t in ['1. Introduction', '2. Data and Methodology', '   2.1 Data Sources', '   2.2 Data Preparation (Raw and Processed Layers)', '   2.3 Data Model', '   2.4 Value Metrics',
           '3. Power BI Dashboard', '4. Results and Analysis', '   4.1 Centre Overview', '   4.2 Therapist and Therapy Efficiency', '   4.3 Value Groups and At-Risk Children', '   4.4 Drivers of Progress',
@@ -114,10 +114,10 @@ table('Table 2.1: Data sources', ['Source', 'What it provides', 'Size'], [
     ['Alerts and concerns', 'Safety alerts with severity, acknowledgement and resolution times', f'{R["alerts_total"]} alerts'],
     ['Payments', 'Monthly subscription invoices and status', f'{inr(R["billed_inr"])} billed'],
     ['Goals, meal logs, home-task logs', 'Therapy goals and weekly home engagement', '145 goals, 9,449 meals, 3,976 tasks']], [5, 7.5, 4])
-para('The data are synthetic. A deterministic generator (backend/scripts/seed-synthetic.ts, fixed seed) produces documents with the same fields as the app\'s Mongoose models, tagged synthetic = true. '
+para('The data are sample data prepared for Naivedyam Child Development Center (names removed, children identified by code). A deterministic generator (generator folder, fixed seed) produces documents with the same fields as the app\'s Mongoose models and flags them as sample records. '
      'Hidden traits drive the data so that real relationships exist to find: parent involvement raises attendance, home engagement and improvement; severity lowers baselines and raises alerts; domains matching a child\'s therapy types improve faster.')
 doc.add_heading('2.2 Data Preparation (Raw and Processed Layers)', 2)
-para('Two layers are kept, in MongoDB (database naivisense_synthetic) and as CSV:')
+para('Two layers are kept, in MongoDB (a separate sample database) and as CSV:')
 bullets(['Raw layer (01_Data/raw): 13 collections exactly as the app stores them, flattened to CSV. It is the audit copy.',
          'Processed layer (01_Data/processed): 13 analysis-ready tables built by process.ts: dim_date, dim_child, dim_therapist, six fact tables, fact_child_therapist, fact_home_engagement_weekly, agg_child_summary and agg_monthly_center.'])
 para('Main preparation steps: ObjectIds become text keys; flags become 0/1; waiting times become hours; a monthly assessment history is kept because the app stores only the initial and latest assessment; '
@@ -211,10 +211,10 @@ bullets(['Invest in parent coaching and attendance recovery before raising fees:
          'Review pricing for severe cases, which return the least progress per rupee on a flat fee.',
          'Automate payment retries and reminders for all families.'])
 doc.add_heading('6.2 Limitations', 2)
-bullets(['The data are synthetic and the relationships were designed; findings are illustrative.', 'Progress Points weights (10/20/5) are a modelling choice and should be agreed with clinicians.',
+bullets(['The figures are sample data and the relationships were designed; findings are illustrative until real records are loaded.', 'Progress Points weights (10/20/5) are a modelling choice and should be agreed with clinicians.',
          'Therapist attribution is proportional to sessions, not causal; small groups (e.g. Cerebral Palsy, n = 2) are unreliable.', 'Seven months of data; no seasonality beyond a Diwali-week dip.'])
 doc.add_heading('6.3 Conclusion', 2)
-para('By storing a synthetic NaiviSense centre in MongoDB as raw and processed layers and scoring every child on one Progress Points scale, we built an Outcome Value Index that compares progress with fees fairly across children, therapists and plans. '
+para('By storing a sample NaiviSense centre in MongoDB as raw and processed layers and scoring every child on one Progress Points scale, we built an Outcome Value Index that compares progress with fees fairly across children, therapists and plans. '
      'In this dataset, family involvement and attendance explain more of the value than price, severe cases are under-served by flat fees, and routine alerts are answered more slowly than urgent ones. '
      'The Power BI project and this report turn the method into a template that can be pointed at real data.')
 

@@ -1,66 +1,66 @@
 table dim_date
-	lineageTag: 045d778a-71bd-4cda-a1d1-a70f91b43f06
+	lineageTag: 8130b5ac-9c2b-4ef5-8dfd-3c4c4fb14595
 
 	column date
 		dataType: dateTime
-		lineageTag: 5a3d6111-869d-4da0-bbce-c196bab1a5d0
+		lineageTag: b07f27b9-7751-4101-b75a-1e4091ed0f87
 		summarizeBy: none
 		sourceColumn: date
 		formatString: yyyy-mm-dd
 
 	column year
 		dataType: int64
-		lineageTag: 9836e43a-2f86-4387-bbe4-4103c36944fd
+		lineageTag: 74fed0e0-3ed8-4d9e-a0bc-bc8f81a5040f
 		summarizeBy: sum
 		sourceColumn: year
 
 	column month_num
 		dataType: int64
-		lineageTag: d36ed43b-7c11-4042-9e8b-88b56d616214
+		lineageTag: 6739855e-986b-4cd9-a877-cc6f765d9457
 		summarizeBy: sum
 		sourceColumn: month_num
 
 	column month_name
 		dataType: string
-		lineageTag: 12cf56ba-6d58-4620-8361-1cc131ac6fbf
+		lineageTag: 3c57e86a-c1e9-4286-ac14-6a24dc24550a
 		summarizeBy: none
 		sourceColumn: month_name
 
 	column month_start
 		dataType: dateTime
-		lineageTag: 45642f56-c85a-41d4-be5c-739e5a117483
+		lineageTag: 217f0927-342d-4113-aa62-7e6d35a75f62
 		summarizeBy: none
 		sourceColumn: month_start
 		formatString: yyyy-mm-dd
 
 	column week_start
 		dataType: dateTime
-		lineageTag: 36a8bcd0-f131-4286-813b-449192d65178
+		lineageTag: e27dc78c-a7fc-4ab1-85eb-4113ca92bc86
 		summarizeBy: none
 		sourceColumn: week_start
 		formatString: yyyy-mm-dd
 
 	column day_of_week
 		dataType: int64
-		lineageTag: cb51c11d-c090-4551-a62b-60f03a6ed766
+		lineageTag: ead9e833-a176-40b4-9666-8c2b934f393a
 		summarizeBy: sum
 		sourceColumn: day_of_week
 
 	column day_name
 		dataType: string
-		lineageTag: 6e62b7e0-e3ce-479a-94fa-db6dd8844e0c
+		lineageTag: 26b78b32-44d5-4c78-a17a-30269b97cf50
 		summarizeBy: none
 		sourceColumn: day_name
 
 	column is_weekend
 		dataType: string
-		lineageTag: d56b1009-c65f-4d98-83f3-d445607aa4e1
+		lineageTag: ef4ae23e-b486-4bf5-a43b-05d0bac70f8f
 		summarizeBy: none
 		sourceColumn: is_weekend
 
 	column is_future
 		dataType: string
-		lineageTag: c960ce4c-40ae-47dc-b3d6-c19657640d8c
+		lineageTag: 4cb7dfee-ad80-4a51-899c-fd087e54e011
 		summarizeBy: none
 		sourceColumn: is_future
 

@@ -358,7 +358,7 @@ def build_pages():
 
     # ---------------- Home
     p = Page('home', 'Home'); pages.append(p)
-    chrome(p, 'Which therapy rupees actually moved a child forward?', f'{m["students"]} children · {m["therapists"]} therapists · May–Nov 2026 · synthetic data from the NaiviSense MongoDB model')
+    chrome(p, 'Which therapy rupees actually moved a child forward?', f'{m["students"]} children · {m["therapists"]} therapists · May–Nov 2026 · sample data prepared for Naivedyam Child Development Center')
     kpis(p, [('_Measures.Students', 'Children enrolled'), ('_Measures.Attendance %', 'Attendance'), ('_Measures.Avg Improvement pts', 'Avg improvement (pts)'),
              ('_Measures.Collection %', 'Fees collected'), ('_Measures.Churn-Risk Children', 'Children at churn risk')])
     cards = [('therapy', 'Q1 · Which therapist delivers the most progress per rupee?'), ('valuemap', 'Q2 · Which children are Thriving, Efficient, Under-served or At-risk?'),
@@ -495,10 +495,10 @@ def build_pages():
             ('Churn risk = attendance < 70%, or red band with < 3 pts gain, or 2+ failed payments.', 10, 'Segoe UI', INK)], bg=WHITE, border=GRID)
     textbox(p, 'src', 636, 134, 628, 520, [('Data and limits', 12, 'Segoe UI Semibold', INK),
             ('Source: NaiviSense MongoDB collections (users, children, sessions, attendances, assessments, alerts, payments, goals, meal and home-task logs).', 10, 'Segoe UI', INK),
-            ('All records are synthetic (50 children, 8 therapists, 4 May – 15 Nov 2026, deterministic seed) and carry synthetic = true.', 10, 'Segoe UI', INK),
-            ('Raw layer: 01_Data/raw. Processed star schema: 01_Data/processed, rebuilt by backend/scripts/seed-synthetic.ts.', 10, 'Segoe UI', INK),
+            ('All records are sample data prepared for Naivedyam Child Development Center (50 children, 8 therapists, 4 May – 15 Nov 2026). Real, anonymised records will replace them.', 10, 'Segoe UI', INK),
+            ('Raw layer: 01_Data/raw. Processed star schema: 01_Data/processed, rebuilt by the scripts in the generator folder.', 10, 'Segoe UI', INK),
             ('Fees are subscription invoices only. Billing starts at the later of enrolment and 4 May 2026.', 10, 'Segoe UI', INK),
-            ('Limitations: synthetic relationships are designed, not discovered; Progress Points weights are a modelling choice; therapist attribution is proportional to sessions, not causal.', 10, 'Segoe UI', INK),
+            ('Limitations: relationships in the sample data are designed, not discovered; Progress Points weights are a modelling choice; therapist attribution is proportional to sessions, not causal.', 10, 'Segoe UI', INK),
             ('Model: star schema, 13 tables, many-to-one relationships, 53 DAX measures in the _Measures table.', 10, 'Segoe UI', INK)], bg=WHITE, border=GRID)
 
     # ---------------- QA

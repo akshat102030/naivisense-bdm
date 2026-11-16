@@ -1,65 +1,65 @@
 table fact_assessment_domain
-	lineageTag: 1f65d58c-cd81-41cd-bacd-29bb9d31a4a6
+	lineageTag: bb8054fd-20bb-4284-8407-4139fdc6f67c
 
 	column child_id
 		dataType: string
-		lineageTag: d110f441-1a3c-4a84-9de6-2588a8a382ad
+		lineageTag: 2b0d8c7e-f9f8-4fd5-b986-0e1a522f21af
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column assessment_date
 		dataType: dateTime
-		lineageTag: 563b3886-f58b-4d97-8be2-bc05e753b055
+		lineageTag: efeea37a-604e-4f88-be22-5fe52a240f05
 		summarizeBy: none
 		sourceColumn: assessment_date
 		formatString: yyyy-mm-dd
 
 	column month_start
 		dataType: dateTime
-		lineageTag: 75cda038-f41f-4b46-bac6-7dcc1fff03e6
+		lineageTag: 09b716ca-a066-4361-b27d-e1f00443a982
 		summarizeBy: none
 		sourceColumn: month_start
 		formatString: yyyy-mm-dd
 
 	column seq
 		dataType: int64
-		lineageTag: e552f982-e864-4d77-984e-25dc0cffd534
+		lineageTag: 557b2bf9-0ec9-470a-9639-37aae3e64a7a
 		summarizeBy: none
 		sourceColumn: seq
 
 	column assessment_type
 		dataType: string
-		lineageTag: b05ebfcb-f754-4cde-95bb-1ffb5f9c7501
+		lineageTag: a6103bc0-65d7-4df6-bc2d-2f5a0a7b2bcd
 		summarizeBy: none
 		sourceColumn: assessment_type
 
 	column domain
 		dataType: string
-		lineageTag: 7c665447-fb93-4c52-9037-092e0aea54da
+		lineageTag: 3ac37cca-cb1a-40e2-8930-2b106be27a86
 		summarizeBy: none
 		sourceColumn: domain
 
 	column domain_group
 		dataType: string
-		lineageTag: e104705d-4a3d-440d-93a0-a1aa0f89663d
+		lineageTag: d1368676-ebed-4a14-9d01-758617aca6bf
 		summarizeBy: none
 		sourceColumn: domain_group
 
 	column score
 		dataType: double
-		lineageTag: c1cbba3d-e28b-4f10-b16a-578b254cbe85
+		lineageTag: b1ed1f30-713f-45d5-a400-3818eae6429b
 		summarizeBy: sum
 		sourceColumn: score
 
 	column is_initial
 		dataType: int64
-		lineageTag: 8980c9d4-380c-46fb-a939-bb5d555f54b1
+		lineageTag: efc4e9c8-d529-4be4-97bb-3497de9aa25a
 		summarizeBy: sum
 		sourceColumn: is_initial
 
 	column is_latest
 		dataType: int64
-		lineageTag: ebb03886-7c76-42de-990d-7ffd61c9620f
+		lineageTag: 32513717-5f27-429d-85a8-32f134896dca
 		summarizeBy: sum
 		sourceColumn: is_latest
 

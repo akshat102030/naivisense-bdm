@@ -56,8 +56,9 @@ export function Method() {
       </h3>
       <ol className="steps" style={{ padding: 0, margin: 0 }}>
         <li>
-          <b>1 · Generate</b>A seeded script writes {data.meta.students} synthetic children, {data.meta.therapists}{' '}
-          therapists and their sessions, assessments, alerts and payments into MongoDB with the NaiviSense models.
+          <b>1 · Load</b>A script loads {data.meta.students} children, {data.meta.therapists} therapists and their
+          sessions, assessments, alerts and payments into MongoDB with the NaiviSense models. Sample data for now; real,
+          anonymised records follow.
         </li>
         <li>
           <b>2 · Raw layer</b>13 collections exactly as the app stores them, kept as the audit copy.
@@ -77,8 +78,8 @@ export function Method() {
       </h3>
       <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.7, color: 'var(--theme-text-secondary)' }}>
         <li>
-          All data are synthetic. The relationships were designed into the generator, so the findings demonstrate the
-          method and do not describe a real centre.
+          The figures shown are sample data prepared for Naivedyam Child Development Center. Real, anonymised records
+          will replace them, and the findings will change with them.
         </li>
         <li>The Progress Points weights (10, 20, 5) are a modelling choice and should be agreed with clinicians.</li>
         <li>

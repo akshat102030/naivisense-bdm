@@ -1,77 +1,77 @@
 table fact_alert
-	lineageTag: 03e4cf82-2b84-4304-8232-ad0a688f2d11
+	lineageTag: b6801a1d-0ff4-46d4-9402-fadbd541a008
 
 	column alert_id
 		dataType: string
-		lineageTag: 4121e654-74ee-4cde-bbad-04b3a8b4060b
+		lineageTag: 49dc9f60-1353-41d9-a86b-c57a0d3a59e8
 		summarizeBy: none
 		sourceColumn: alert_id
 
 	column child_id
 		dataType: string
-		lineageTag: 0cc37b54-fbb1-46fa-86c8-937ba22e9241
+		lineageTag: 3f8fe3eb-63f2-4444-bfc0-1104631911a4
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column created_date
 		dataType: dateTime
-		lineageTag: 862c8f42-a1c1-4c13-a029-e3879cca6354
+		lineageTag: 3c04aa61-5d4d-438c-b90f-e72c2a657dd3
 		summarizeBy: none
 		sourceColumn: created_date
 		formatString: yyyy-mm-dd
 
 	column month_start
 		dataType: dateTime
-		lineageTag: 9d814378-3831-411f-b76d-f5788da59d7f
+		lineageTag: b536e415-2f95-4eb9-b302-2f3ada86ad4a
 		summarizeBy: none
 		sourceColumn: month_start
 		formatString: yyyy-mm-dd
 
 	column alert_type
 		dataType: string
-		lineageTag: 56f107e7-c450-4d2d-a18f-8092e9dc7a73
+		lineageTag: 0dbdb4b6-2450-41cf-9519-258723c27984
 		summarizeBy: none
 		sourceColumn: alert_type
 
 	column category
 		dataType: string
-		lineageTag: 7407ac86-283c-490f-adbd-44d5588107e8
+		lineageTag: 5a47979e-f3d3-4ce0-81e5-165c91ff495f
 		summarizeBy: none
 		sourceColumn: category
 
 	column severity
 		dataType: string
-		lineageTag: aac11255-fa3a-4db4-b9d4-4d52918ff74d
+		lineageTag: 04604953-c880-47d8-97fd-35715760f4c9
 		summarizeBy: none
 		sourceColumn: severity
 
 	column source
 		dataType: string
-		lineageTag: f713587d-9d2b-40fb-a445-4163753974a1
+		lineageTag: 7acc9841-a945-4850-94ed-6fb955da1c57
 		summarizeBy: none
 		sourceColumn: source
 
 	column status
 		dataType: string
-		lineageTag: 0aadfc1c-e679-42d9-8247-4b420743f52e
+		lineageTag: dd0c7d2a-c146-4fc0-be93-fd23caeb313e
 		summarizeBy: none
 		sourceColumn: status
 
 	column is_open
 		dataType: int64
-		lineageTag: fb5b6c66-5da0-448c-b9bf-edae6e99d5fa
+		lineageTag: b18b5591-757d-4522-967a-f34fae9495b6
 		summarizeBy: sum
 		sourceColumn: is_open
 
 	column hours_to_acknowledge
 		dataType: double
-		lineageTag: f9c657d6-4e3a-417d-9747-a244b6e19040
+		lineageTag: 8af4f11e-9f05-435e-8f51-24221869ee68
 		summarizeBy: sum
 		sourceColumn: hours_to_acknowledge
 
 	column hours_to_resolve
 		dataType: double
-		lineageTag: b85be6b9-80fe-4205-958a-347041fbc341
+		lineageTag: c1fed078-7aad-4b76-904c-6174fb5d22b4
 		summarizeBy: sum
 		sourceColumn: hours_to_resolve
 

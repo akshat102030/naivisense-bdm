@@ -4,7 +4,7 @@
 
 A BDM (Business Data Management) analytics project built on the NaiviSense therapy-centre data model. It scores every child on one **Progress Points** scale and compares each child's share of centre progress with their share of centre fees: the **Outcome Value Index** (1.00 = fair value).
 
-It ships as an interactive web dashboard, a Power BI project, a written report and a presentation script, all built on one dataset. **All data are synthetic** (50 children, 8 therapists, 4 May – 15 Nov 2026). Children are identified by code (`C001`–`C050`) only.
+It ships as an interactive web dashboard, a Power BI project, a written report and a presentation script, all built on one dataset. It is prepared for **Naivedyam Child Development Center**. **The figures shown are sample data** (50 children, 8 therapists, 4 May – 15 Nov 2026) while real, anonymised records are prepared; children are identified by code (`C001`–`C050`) only, with no names. Findings will change when the real data is loaded.
 
 | Dark | Light |
 |---|---|
@@ -23,7 +23,7 @@ Above 1.00 a family received more progress than the fees paid; below 1.00, less.
 
 ## Six business questions
 
-| # | Question | Finding (synthetic data) |
+| # | Question | Finding (sample data) |
 |---|---|---|
 | 1 | Which therapist gives the most progress per rupee? | Kavya Iyer leads at 1.19×, Amit Joshi trails at 0.88×; therapy types sit within 0.96–1.05 |
 | 2 | Who is Thriving, Efficient, Under-served, At-risk? | 20 / 5 / 5 / 20 children; 9 children at churn risk |
@@ -32,7 +32,7 @@ Above 1.00 a family received more progress than the fees paid; below 1.00, less.
 | 5 | Are safety alerts handled in time? | High severity acknowledged in 1.6 h (all within 4 h); medium/low take about 16 h |
 | 6 | Where does revenue leak? | ₹32.95 L collected of ₹41.89 L billed (78.7%); 18 failed payments; not concentrated in low-involvement families |
 
-These patterns were designed into the generator, so they demonstrate the method rather than describe a real centre.
+These patterns were designed into the sample data, so they demonstrate the method; they will change once real records are loaded.
 
 ## Repository layout
 
@@ -47,7 +47,7 @@ naivisense-bdm/
 ├── 03_Report/           Written BDM report (.docx) and its figures
 ├── 04_Presentation/     Slide deck (11 slides, PDF) and timed 10-minute presentation script (PDF + Markdown)
 ├── 06_Code/             Python scripts: analysis (independent recomputation), PBIP / figure / report / script / dashboard-data generators
-├── generator/           TypeScript synthetic-data generator and raw → processed transformation (MongoDB models)
+├── generator/           TypeScript sample-data generator and raw → processed transformation (MongoDB models)
 └── docs/screenshots/    Images used in this README
 ```
 
@@ -85,7 +85,7 @@ Or connect this GitHub repo in Netlify (*Add new site → Import an existing pro
 ## Rebuild the data and every output
 
 ```bash
-# 1. Generate synthetic data (dry run writes CSV only; --write also seeds MongoDB database naivisense_synthetic)
+# 1. Generate the sample data (dry run writes CSV only; --write also seeds a separate MongoDB database)
 cd generator && npm install
 npx tsx seed-synthetic.ts                                   # CSV into ../01_Data
 MONGO_URL="mongodb+srv://…" npx tsx seed-synthetic.ts --write   # also writes MongoDB (see .env.example)
@@ -119,7 +119,7 @@ Not verified:
 
 ## Limitations
 
-- Synthetic data with designed relationships; findings are illustrative.
+- Sample data with designed relationships; findings are illustrative until real records are loaded.
 - The Progress Points weights (10, 20, 5) are a modelling choice that should be agreed with clinicians.
 - Therapist attribution is proportional to attended sessions, not causal; small groups (for example Cerebral Palsy, 2 children) are unreliable.
 - Seven months of data, with November a part month.

@@ -12,7 +12,7 @@ export function Hero() {
           <div>
             <span className="eyebrow">
               <span className="dot" />
-              BDM project · {data.meta.period} · synthetic data
+              Naivedyam Child Development Center · {data.meta.period} · sample data
             </span>
             <h1 id="hero-title">
               Which therapy rupees <em>moved a child forward?</em>

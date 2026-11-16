@@ -1,45 +1,45 @@
 table fact_child_therapist
-	lineageTag: 3bc72113-13df-467a-8a80-388c9651df03
+	lineageTag: cae25da8-547a-4bfa-a554-339ac68ecf19
 
 	column child_id
 		dataType: string
-		lineageTag: 9226cdb9-34ac-4efe-a845-5cca54486830
+		lineageTag: 4041f7b7-a4b0-4a76-a633-49c6980dc41e
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column therapist_id
 		dataType: string
-		lineageTag: b4b2cd9e-5de4-4da5-badf-0c115e340353
+		lineageTag: e2084370-cb10-43b7-88c5-17ffe20b1fee
 		summarizeBy: none
 		sourceColumn: therapist_id
 
 	column therapy_type
 		dataType: string
-		lineageTag: 1f011984-640a-477b-ab59-6c8631ca2eb5
+		lineageTag: 8bec8ad0-402e-4fc4-8240-7c5c26c7feb3
 		summarizeBy: none
 		sourceColumn: therapy_type
 
 	column sessions_attended
 		dataType: int64
-		lineageTag: a7970996-0c6f-4e87-adc4-8ce9466896ec
+		lineageTag: f1accbd4-7652-4888-a0ad-2038cd8e6a37
 		summarizeBy: sum
 		sourceColumn: sessions_attended
 
 	column session_share
 		dataType: double
-		lineageTag: a3f73056-e7f8-4f1a-b36b-a0f08fc2efad
+		lineageTag: 2fca6931-17e9-4b71-9a5f-0cce7f2b92ed
 		summarizeBy: sum
 		sourceColumn: session_share
 
 	column attributed_progress_points
 		dataType: double
-		lineageTag: aa398fd1-ca56-41a0-b685-66bcc569c91c
+		lineageTag: 81bb08fb-0265-4321-8a71-41d7a06628a5
 		summarizeBy: sum
 		sourceColumn: attributed_progress_points
 
 	column attributed_fees_inr
 		dataType: int64
-		lineageTag: bec29551-4feb-4e21-b4d2-b4f327d14beb
+		lineageTag: ed5a0420-d478-4e00-8687-c1867a6e12fc
 		summarizeBy: sum
 		sourceColumn: attributed_fees_inr
 

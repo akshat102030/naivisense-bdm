@@ -1,64 +1,64 @@
 table agg_monthly_center
-	lineageTag: 6e10ce3f-2541-495d-8ea1-6826445642b7
+	lineageTag: 912d2172-f8c7-43ac-be08-d54fd6573933
 
 	column month_start
 		dataType: dateTime
-		lineageTag: b5a8b5a5-c994-4cf4-bf67-7a29af57df5f
+		lineageTag: a4e3877c-9a50-4eeb-ba2f-f0528810e053
 		summarizeBy: none
 		sourceColumn: month_start
 		formatString: yyyy-mm-dd
 
 	column sessions_scheduled
 		dataType: int64
-		lineageTag: 79ee6593-f7ac-4220-87af-31dc236742bf
+		lineageTag: b890951c-be05-44a1-9c88-a604854ddd00
 		summarizeBy: sum
 		sourceColumn: sessions_scheduled
 
 	column sessions_attended
 		dataType: int64
-		lineageTag: f9ade8f9-30e0-45b5-8af5-9e71a8526800
+		lineageTag: 8b9f68ac-7ac3-47d0-98e1-919bdbde0fa0
 		summarizeBy: sum
 		sourceColumn: sessions_attended
 
 	column attendance_rate
 		dataType: double
-		lineageTag: eb5daabe-d45a-4e55-a639-550862a54165
+		lineageTag: 1de20b22-4a71-4dc4-b241-9a42a17f1f87
 		summarizeBy: sum
 		sourceColumn: attendance_rate
 
 	column avg_session_score
 		dataType: double
-		lineageTag: fb8d2d55-efd9-47bc-aebd-43426be511d7
+		lineageTag: 9a444061-5158-45b9-827d-3fe2cbf4e286
 		summarizeBy: sum
 		sourceColumn: avg_session_score
 
 	column active_children
 		dataType: int64
-		lineageTag: a1546789-3920-4615-9972-20986940bae0
+		lineageTag: a86e9d0f-6b7d-4f2d-9591-7f28e6f6cbf3
 		summarizeBy: sum
 		sourceColumn: active_children
 
 	column revenue_billed_inr
 		dataType: int64
-		lineageTag: 22c0d4b2-ebd4-4c68-9220-f2c44e81e3eb
+		lineageTag: 4b5b13af-fe60-4b7e-9a18-da2756b60659
 		summarizeBy: sum
 		sourceColumn: revenue_billed_inr
 
 	column revenue_collected_inr
 		dataType: int64
-		lineageTag: 1750fb9b-ab7e-4f1b-8738-2f3e4998803a
+		lineageTag: 787410bb-37ba-4b55-9511-7bf39db716ef
 		summarizeBy: sum
 		sourceColumn: revenue_collected_inr
 
 	column alerts_raised
 		dataType: int64
-		lineageTag: f16055ea-5355-4f64-bd4f-c4937a52760d
+		lineageTag: 157b4e94-5396-45f8-b4dc-f434dc3c8ca2
 		summarizeBy: sum
 		sourceColumn: alerts_raised
 
 	column avg_overall_assessment
 		dataType: double
-		lineageTag: ea912495-1237-429b-8e71-10ffbf9e1067
+		lineageTag: cb68fbeb-3104-4402-8ced-5b6ecbcf5b39
 		summarizeBy: sum
 		sourceColumn: avg_overall_assessment
 

@@ -49,7 +49,7 @@ def grp(d):
 
 pay = R['payments_by_status']
 data = {
-    'meta': {'students': R['students'], 'therapists': R['therapists'], 'period': 'May–Nov 2026', 'medianFee': mf, 'medianProgress': mp, 'generated': 'synthetic data, deterministic seed'},
+    'meta': {'students': R['students'], 'therapists': R['therapists'], 'period': 'May–Nov 2026', 'medianFee': mf, 'medianProgress': mp, 'generated': 'sample data'},
     'kpi': {k: R[k] for k in ('students', 'therapists', 'sessions_past', 'sessions_attended', 'attendance_rate', 'billed_inr', 'collected_inr', 'outstanding_inr', 'collection_rate',
                               'avg_improvement_pts', 'churn_risk_children', 'red_risk_children', 'risk_improved_children', 'failed_payments', 'alerts_total', 'alerts_open')},
     'quadrants': R['quadrants'], 'children': children, 'therapists': therapists, 'therapyTypes': grp(R['vi_by_therapy_type']),

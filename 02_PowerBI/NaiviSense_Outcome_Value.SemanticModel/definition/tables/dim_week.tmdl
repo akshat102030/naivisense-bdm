@@ -1,10 +1,10 @@
 table dim_week
-	lineageTag: 2a997454-e8ed-4401-a0e2-bbd17fe5305c
+	lineageTag: a9e9c52b-3b51-4bb0-9fae-e243f4d7257b
 
 	column week_start
 		dataType: dateTime
 		formatString: yyyy-mm-dd
-		lineageTag: 30f3e363-3825-4dd2-87df-e4d03c9db48f
+		lineageTag: ac0143b0-36ee-447a-84ff-f3c283626408
 		summarizeBy: none
 		sourceColumn: week_start
 

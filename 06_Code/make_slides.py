@@ -42,7 +42,7 @@ def side(points, big=None):
 
 
 slide('', f'''<div class="title">
-  <span class="eyebrow">BDM project · Semester VII · synthetic data</span>
+  <span class="eyebrow">BDM project · Semester VII · Naivedyam Child Development Center · sample data</span>
   <h1>Which therapy rupees <em>moved a child forward?</em></h1>
   <p class="lead">Scoring {R["students"]} children on one Progress Points scale, and comparing each child's share of progress with their share of fees.</p>
   <p class="meta">NaiviSense Outcome Value Intelligence · {R["therapists"]} therapists · May–Nov 2026</p>
@@ -62,7 +62,7 @@ slide('One idea: progress per rupee', f'''<div class="two">
 </div>''', 'Method')
 
 slide('From the app to the dashboard', f'''<div class="steps">
-  <div><b>1 · Generate</b>A seeded script writes {R["students"]} synthetic children, their sessions, assessments, alerts and payments into MongoDB, using the NaiviSense models.</div>
+  <div><b>1 · Generate</b>A script loads {R["students"]} sample children, their sessions, assessments, alerts and payments into MongoDB, using the NaiviSense models.</div>
   <div><b>2 · Raw layer</b>13 collections exactly as the app stores them. The audit copy.</div>
   <div><b>3 · Processed layer</b>A star schema: dimensions, facts and a child summary. Children appear by code only.</div>
   <div><b>4 · Analyse</b>An independent Python script recomputes every number. Same model in Power BI, a report and a web dashboard.</div>
@@ -116,7 +116,7 @@ slide('Recommendations', '''<ul class="recs">
 
 slide('Limits, and where to find everything', f'''<div class="two">
   <ul class="recs small">
-    <li>All data are synthetic and the relationships were designed in, so findings demonstrate the method, not a real centre.</li>
+    <li>The figures are sample data prepared for Naivedyam Child Development Center; relationships were designed in, so findings demonstrate the method. Real, anonymised records will replace them.</li>
     <li>Progress Points weights (10, 20, 5) are a modelling choice to agree with clinicians.</li>
     <li>Therapist attribution is by session share, not causal. Small groups are unreliable.</li>
     <li>Seven months of data; November is a part month.</li>
@@ -133,7 +133,7 @@ pages = ''
 total = len(slides)
 for i, (kicker, title, body, num) in enumerate(slides, 1):
     head = '' if not title else f'<header>{f"<span class=eyebrow>{kicker}</span>" if kicker else ""}<h2>{title}</h2></header>'
-    foot = f'<footer><span>NaiviSense Outcome Value · BDM project · synthetic data</span><span>{i} / {total}</span></footer>' if num else ''
+    foot = f'<footer><span>NaiviSense Outcome Value · BDM project · sample data</span><span>{i} / {total}</span></footer>' if num else ''
     pages += f'<section class="slide{" cover" if not title else ""}">{head}<div class="body">{body}</div>{foot}</section>\n'
 
 css = f'''

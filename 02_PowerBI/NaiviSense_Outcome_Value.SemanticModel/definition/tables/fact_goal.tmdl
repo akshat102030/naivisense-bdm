@@ -1,53 +1,53 @@
 table fact_goal
-	lineageTag: 6bff838f-d5a4-4716-96c2-5c0ea720018a
+	lineageTag: 6f83d7bc-0ac9-44ba-b774-f455f109474c
 
 	column goal_id
 		dataType: string
-		lineageTag: 9f4bd8a1-2b5e-41c6-aeb5-940b80a883ab
+		lineageTag: 7e63e202-2215-4be6-bce8-505cf7e9b3fd
 		summarizeBy: none
 		sourceColumn: goal_id
 
 	column child_id
 		dataType: string
-		lineageTag: e8067fd4-7ba4-4fe3-9729-8b6587db0a70
+		lineageTag: a43dfd01-4711-4709-b6d8-d79a012df7c8
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column title
 		dataType: string
-		lineageTag: 557a2c94-b1e7-4090-94f8-ff89791179f3
+		lineageTag: f23999eb-9d87-40f6-b027-e4fe036469b9
 		summarizeBy: none
 		sourceColumn: title
 
 	column status
 		dataType: string
-		lineageTag: 8fa5b86d-596e-493a-b752-cb3699e5c757
+		lineageTag: fe828ba6-c58b-4bf1-a7a3-5a2e52ed3ca0
 		summarizeBy: none
 		sourceColumn: status
 
 	column priority
 		dataType: int64
-		lineageTag: 2d233cc6-45bc-41ba-9eb9-2422ee4e2ac7
+		lineageTag: fe93a163-e679-4b27-9647-4af3dc0362a3
 		summarizeBy: none
 		sourceColumn: priority
 
 	column created_date
 		dataType: dateTime
-		lineageTag: d21fa313-0b36-4b8c-998d-7c1ba3c766ac
+		lineageTag: b75fac84-260b-48eb-bddf-c2a76727dae5
 		summarizeBy: none
 		sourceColumn: created_date
 		formatString: yyyy-mm-dd
 
 	column target_date
 		dataType: dateTime
-		lineageTag: f7dd7c96-b90d-4d65-9bca-b4c70accc689
+		lineageTag: 1e8e4af5-c1f3-44a8-961e-e73242c33b25
 		summarizeBy: none
 		sourceColumn: target_date
 		formatString: yyyy-mm-dd
 
 	column is_completed
 		dataType: int64
-		lineageTag: efc2ed0f-3432-4657-8b7f-ccc065821c47
+		lineageTag: fa9a5079-5629-4c8f-b1d5-1bccb8c3ceef
 		summarizeBy: sum
 		sourceColumn: is_completed
 

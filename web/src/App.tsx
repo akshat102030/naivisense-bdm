@@ -39,8 +39,8 @@ export function App() {
       <footer className="footer">
         <div className="wrap">
           <span>
-            NaiviSense Outcome Value · BDM project · {data.meta.period}. All data are synthetic; children appear by code
-            only.
+            NaiviSense Outcome Value · BDM project · {data.meta.period}. Prepared for Naivedyam Child Development
+            Center. Sample data shown; children appear by code only.
           </span>
           <span>Built with React, TypeScript and Vite.</span>
         </div>

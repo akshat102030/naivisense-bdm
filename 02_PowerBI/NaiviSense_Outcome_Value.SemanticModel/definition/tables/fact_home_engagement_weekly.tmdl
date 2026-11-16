@@ -1,46 +1,46 @@
 table fact_home_engagement_weekly
-	lineageTag: db57ecca-14fc-4e33-9167-80d92bcd3159
+	lineageTag: 9d97a8e9-1d96-4f11-97c7-3a6750d537f2
 
 	column child_id
 		dataType: string
-		lineageTag: 7b546fb1-f4ea-4bfd-b2a6-f302d2223cf8
+		lineageTag: d10a86e3-4dda-439b-81ba-04aa1c995a91
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column week_start
 		dataType: dateTime
-		lineageTag: 89462023-c839-48c5-a168-4ef6b420b0d3
+		lineageTag: f65cf970-ccb6-47e4-b88e-d362a1b4724d
 		summarizeBy: none
 		sourceColumn: week_start
 		formatString: yyyy-mm-dd
 
 	column meals_logged
 		dataType: int64
-		lineageTag: bc2972d2-b73e-4315-84db-2f2f5950352a
+		lineageTag: 681b382b-ad53-4fa4-96f8-77465cf02d78
 		summarizeBy: sum
 		sourceColumn: meals_logged
 
 	column home_tasks_logged
 		dataType: int64
-		lineageTag: bf46fea7-c153-4566-aa92-c3edfe1966ee
+		lineageTag: 47cbe48b-b963-4a81-b875-ba808e88e9d3
 		summarizeBy: sum
 		sourceColumn: home_tasks_logged
 
 	column home_tasks_approved
 		dataType: int64
-		lineageTag: 7bb8d0b3-7d24-4139-81c1-e8d479e8ce01
+		lineageTag: f3b1cade-6eb1-42f5-9133-1df0da413545
 		summarizeBy: sum
 		sourceColumn: home_tasks_approved
 
 	column sessions_scheduled
 		dataType: int64
-		lineageTag: ea88dd5d-292d-4cbe-8b49-44c531da9bb6
+		lineageTag: 800fcad4-b3a2-4459-bdeb-5f3944ced5e6
 		summarizeBy: sum
 		sourceColumn: sessions_scheduled
 
 	column sessions_attended
 		dataType: int64
-		lineageTag: 99bce83b-c22b-4b66-8a9e-75a10eb022fe
+		lineageTag: 9533ae77-2b4e-422b-bd5f-a46ce979c46c
 		summarizeBy: sum
 		sourceColumn: sessions_attended
 

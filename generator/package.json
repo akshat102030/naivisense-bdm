@@ -2,7 +2,7 @@
   "name": "naivisense-bdm-generator",
   "private": true,
   "version": "1.0.0",
-  "description": "Deterministic synthetic NaiviSense data generator and raw to processed transformation",
+  "description": "Deterministic sample-data generator for NaiviSense and raw to processed transformation",
   "scripts": {
     "seed": "tsx seed-synthetic.ts",
     "seed:write": "tsx seed-synthetic.ts --write",

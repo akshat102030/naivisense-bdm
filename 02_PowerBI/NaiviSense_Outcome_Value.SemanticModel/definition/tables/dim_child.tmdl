@@ -1,113 +1,113 @@
 table dim_child
-	lineageTag: 45b3b715-7d6a-405f-8017-f342f7dda62d
+	lineageTag: 1eda8c5c-bccd-42c3-93e5-641123b1f2c9
 
 	column child_id
 		dataType: string
-		lineageTag: d37deee4-2d70-433e-8a49-d26bde511208
+		lineageTag: 9f3519c7-5590-403a-aeab-d07bc4c77eca
 		summarizeBy: none
 		sourceColumn: child_id
 
 	column child_code
 		dataType: string
-		lineageTag: 7a18f9bb-b314-4c35-aa5c-1a217fc88448
+		lineageTag: 2aeb1dac-9dbd-4c15-ac94-ec3b7436fd55
 		summarizeBy: none
 		sourceColumn: child_code
 
 	column gender
 		dataType: string
-		lineageTag: 9270007e-7f35-4ed3-9660-37c6f766944d
+		lineageTag: bc7cbbc5-c16b-406f-8fe6-ec55cf392e22
 		summarizeBy: none
 		sourceColumn: gender
 
 	column age_years
 		dataType: int64
-		lineageTag: fade9fc1-42c7-417d-8811-67675f4ebab1
+		lineageTag: db6ecb96-e0f7-4629-ad2c-b013e3798039
 		summarizeBy: sum
 		sourceColumn: age_years
 
 	column age_band
 		dataType: string
-		lineageTag: 00cf40b9-18bf-40c8-87eb-a6ea75174b23
+		lineageTag: 50385b07-ab34-4bcc-9c7c-d15d496eb9ce
 		summarizeBy: none
 		sourceColumn: age_band
 
 	column primary_diagnosis
 		dataType: string
-		lineageTag: 577363bf-3909-45ae-8cfa-a8e12594fb7d
+		lineageTag: c9beb251-5ba1-40b8-bd2d-676867309079
 		summarizeBy: none
 		sourceColumn: primary_diagnosis
 
 	column diagnosis_count
 		dataType: int64
-		lineageTag: c633765e-f084-403a-8c8f-ae8a94bf6ab5
+		lineageTag: c0419f6a-bcb0-4356-9cdf-f4348c1ea96b
 		summarizeBy: sum
 		sourceColumn: diagnosis_count
 
 	column severity
 		dataType: string
-		lineageTag: 486d819c-cc35-4c5a-aee1-034686118a3a
+		lineageTag: 6b630f0f-839e-4fcf-9dc7-7efd79b4a424
 		summarizeBy: none
 		sourceColumn: severity
 
 	column enrollment_date
 		dataType: dateTime
-		lineageTag: 47cf8a9f-5b8c-40a5-82ef-c5d0a1a05ac4
+		lineageTag: 9656aa71-3287-47fe-9835-3a666b95eb7b
 		summarizeBy: none
 		sourceColumn: enrollment_date
 		formatString: yyyy-mm-dd
 
 	column enrollment_month
 		dataType: dateTime
-		lineageTag: 035e53b5-9bce-4437-8f13-7a2584f8262f
+		lineageTag: 819c768a-2e49-42f1-9044-3fa8cf006ef4
 		summarizeBy: none
 		sourceColumn: enrollment_month
 		formatString: yyyy-mm-dd
 
 	column therapy_types
 		dataType: string
-		lineageTag: 949092be-aedb-4088-a41c-57ea2a864298
+		lineageTag: 2ea282ac-9e63-42fd-8a1e-a277b61b2570
 		summarizeBy: none
 		sourceColumn: therapy_types
 
 	column therapy_type_count
 		dataType: int64
-		lineageTag: d6593ae3-f06a-4dd6-ac2e-ce43a21a6300
+		lineageTag: 1b4a65af-1a3b-443d-babf-8d2210d6768b
 		summarizeBy: sum
 		sourceColumn: therapy_type_count
 
 	column parent_involvement
 		dataType: string
-		lineageTag: 83276b2c-c2c2-4600-866a-4cbe2863db48
+		lineageTag: 26bd1f68-62ba-4608-8013-d617663d08e9
 		summarizeBy: none
 		sourceColumn: parent_involvement
 
 	column screen_time_hours
 		dataType: double
-		lineageTag: 6f7a1889-4ddf-432b-9287-d8bc565ec15c
+		lineageTag: f1bfa0f2-9f47-4c69-8751-66b214a763eb
 		summarizeBy: sum
 		sourceColumn: screen_time_hours
 
 	column play_type
 		dataType: string
-		lineageTag: d8379b9b-2b76-40a9-8988-b3c8fb0fc6b0
+		lineageTag: be9522d6-a851-453d-9d8a-5cd93145ca44
 		summarizeBy: none
 		sourceColumn: play_type
 
 	column birth_history
 		dataType: string
-		lineageTag: e55cc24e-4142-4d93-b2fd-b423fef6c0f0
+		lineageTag: 4daf9e7e-346c-4e66-b9f2-790f777bc208
 		summarizeBy: none
 		sourceColumn: birth_history
 
 	column milestones_delay
 		dataType: int64
-		lineageTag: f805d3ea-02bd-4fc2-80ce-69a26b04ac98
+		lineageTag: 9e6e9b50-6f6f-4d31-b245-60388e83a4d1
 		summarizeBy: sum
 		sourceColumn: milestones_delay
 
 	column parent_user_id
 		dataType: string
-		lineageTag: 660354df-0605-46cb-865a-13e524a81cf7
+		lineageTag: c3b1ab1f-fc4d-4243-ac7c-41fa3c2053e0
 		summarizeBy: none
 		sourceColumn: parent_user_id
 
