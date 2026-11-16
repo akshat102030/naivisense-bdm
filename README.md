@@ -1,6 +1,6 @@
 # NaiviSense Outcome Value: which therapy spend earned its price?
 
-**Live dashboard: [LIVE_URL_PLACEHOLDER](LIVE_URL_PLACEHOLDER)**
+**Live dashboard: [https://naivisense-bdm.netlify.app](https://naivisense-bdm.netlify.app)**
 
 A BDM (Business Data Management) analytics project built on the NaiviSense therapy-centre data model. It scores every child on one **Progress Points** scale and compares each child's share of centre progress with their share of centre fees: the **Outcome Value Index** (1.00 = fair value).
 
@@ -38,8 +38,8 @@ These patterns were designed into the generator, so they demonstrate the method 
 
 ```
 naivisense-bdm/
-├── web/                 Interactive dashboard (Vite + React 18 + TypeScript, no chart library). Deployed to Netlify.
-├── netlify.toml         Netlify build settings (base = web)
+├── web/                 Interactive dashboard (Vite + React 18 + TypeScript, no chart library). Live on Netlify.
+├── netlify.toml         Netlify build settings (base = web); web/vercel.json is the Vercel equivalent
 ├── 01_Data/
 │   ├── raw/             13 collections exactly as the app stores them (CSV)
 │   └── processed/       13 star-schema tables (CSV); also written to MongoDB as proc_*
@@ -65,19 +65,21 @@ npm run ci         # lint, format check, build
 
 The page imports one file, `web/src/data/dashboard.json`, so it needs no backend or database. Append `?theme=dark` or `?theme=light` to force a theme.
 
-## Deploy to Netlify
+## Deploy
 
-The repo is configured for Netlify (`netlify.toml`: base `web`, command `npm ci && npm run build`, publish `dist`, SPA fallback, strict security headers with a build-time CSP hash).
+The dashboard is a static site (`web/dist`), so any static host works. It is live on Netlify; Vercel is configured as an alternative.
 
-**Continuous deploy:** push this repo to GitHub, then in Netlify choose *Add new site → Import an existing project*, pick the repo and accept the detected settings.
-
-**CLI:**
+**Netlify** (current): `netlify.toml` sets base `web`, command `npm ci && npm run build`, publish `dist`. Strict security headers come from `web/public/_headers`, with the inline-script hash filled in at build time.
 
 ```bash
 npx netlify-cli login
 cd web && npm ci && npm run build
-npx netlify-cli deploy --prod --dir=dist --site <your-site-name-or-id>   # first time: add --create-site <name>
+npx netlify-cli deploy --prod --dir=dist --site naivisense-bdm
 ```
+
+Or connect this GitHub repo in Netlify (*Add new site → Import an existing project*); the settings are detected from `netlify.toml`.
+
+**Vercel** (alternative): import the repo, set *Root Directory* to `web`; `web/vercel.json` provides the build settings and security headers. The build fails if the inline-script hash in `vercel.json` is out of date (the error prints the new hash to paste in).
 
 ## Rebuild the data and every output
 
@@ -106,7 +108,7 @@ Open `02_PowerBI/NaiviSense_Outcome_Value.pbip` in Power BI Desktop (Windows), s
 Verified:
 - Every number in the dashboard, report and script is recomputed by `06_Code/analysis.py` from the processed CSVs; the centre-wide value index is exactly 1.000.
 - Two generator runs are byte-identical; the generator compiles under `tsc --strict`.
-- The dashboard type-checks, lints, builds, renders in light and dark themes and at narrow width, and works under its Content-Security-Policy.
+- The dashboard type-checks, lints, builds from a clean `npm ci`, renders in light and dark themes and at narrow width, and works under its Content-Security-Policy. The deployed site was checked for the security headers, the downloads and rendered content.
 
 Not verified:
 - The `.pbip` has **not** been opened in Power BI Desktop (Windows-only; built on a Mac). The DAX and report JSON are unevaluated by Power BI.
